@@ -24,6 +24,9 @@ module.exports = {
           rd140 : '35rem',
           rd120 : '30rem',
         },
+        margin: {
+          '1/4' : '25%'
+        }
     },
   },
   variants: {
