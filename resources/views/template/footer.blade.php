@@ -17,20 +17,46 @@
     </body>
 </html>
 
+<style>
+    .slick-dots {
+        display: -webkit-flex;
+        display: -moz-felx;
+        display: -ms-flex;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        list-style: none;
+        bottom: 40px;
+    }
+    .slick-dots li {
+        border-radius: 50%;
+    }
+    .slick-dots button {
+        display: block;
+        width: 16px;
+        height: 16px;
+        padding: 0;
+        border: none;
+        background: #000;
+        border-radius: 50%;
+        text-indent: -9999999px;
+    }
+</style>
+
 <script src="{{ asset('js/index.js') }}"></script>
 <script src="{{ asset('js/carousel.js') }}"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script type="text/javascript">
-    $(document).ready(function(){
-      $('.your-class').slick({
-          autoplay: true,
-          autoplaySpeed: 2000,
-          nextArrow: $('.next'),
-          prevArrow: $('.prev')
-      });
-    });
+    $('.your-class').slick({
+  dots: true,
+  infinite: true,
+  speed: 300,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false
+});
   </script>
 {{-- <script>
     var thumbnails = document.getElementsByClassName('carousel-thumb');

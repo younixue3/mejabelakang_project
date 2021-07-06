@@ -92,15 +92,11 @@
                 </div>
             </div>
         </div>
-        <div class="">
-            <div class="your-class relative">
+        <div class="block relative my-10">
+            <div class="your-class overflow-hidden">
                 <div><img class="object-cover" src="{{ asset('img/freelance-asian-woman-working-home-business-female-working-laptop-using-mobile-phone-drinking-coffee-sitting-table-garden-morning (1).jpg') }}" alt=""></div>
                 <div><img class="object-cover" src="{{ asset('img/cozy-cafe-hotel-decorated-with-green-plants-flowers.jpg') }}" alt=""></div>
                 <div><img class="object-cover" src="{{ asset('img/cozy-cafe-hotel-decorated-with-green-plants-flowers.jpg') }}" alt=""></div>
-            </div>
-            <div class="absolute">
-                <button class="prev absolute top-1/2"><i class="fas fa-chevron-left"></i></button>
-                <button class="next absolute top-1/2"><i class="fas fa-chevron-right"></i></button>
             </div>
         </div>
     </div>
