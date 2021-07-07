@@ -18,28 +18,8 @@
 </html>
 
 <style>
-    .slick-dots {
-        display: -webkit-flex;
-        display: -moz-felx;
-        display: -ms-flex;
-        display: flex;
-        justify-content: center;
-        margin: 0;
-        list-style: none;
-        bottom: 40px;
-    }
-    .slick-dots li {
-        border-radius: 50%;
-    }
-    .slick-dots button {
-        display: block;
-        width: 16px;
-        height: 16px;
-        padding: 0;
-        border: none;
-        background: #000;
-        border-radius: 50%;
-        text-indent: -9999999px;
+    html {
+        scroll-behavior: smooth;
     }
 </style>
 
@@ -49,14 +29,45 @@
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script type="text/javascript">
-    $('.your-class').slick({
-  dots: true,
-  infinite: true,
-  speed: 300,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: false
-});
+    $('.carousel_1st').slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        nextArrow: '.next_1st',
+        prevArrow: '.prev_1st'
+    });
+    $('.carousel_2nd').slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        nextArrow: '.next_2nd',
+        prevArrow: '.prev_2nd',
+        responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        // slidesToShow: 3,
+        // slidesToScroll: 3,
+        // infinite: true,
+        // dots: true,
+        nextArrow: '.next_2nd',
+        prevArrow: '.prev_2nd',
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        arrows: false
+      }
+    } ]
+    });
   </script>
 {{-- <script>
     var thumbnails = document.getElementsByClassName('carousel-thumb');

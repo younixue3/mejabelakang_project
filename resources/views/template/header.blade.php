@@ -10,9 +10,9 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 </head>
 
-<body class="font-poppins">
+<body class="font-poppins" id="home">
     <!-- This example requires Tailwind CSS v2.0+ -->
-    <div class="relative bg-white">
+    <div class="fixed w-screen bg-white z-50">
         <div>
             <div
                 class="flex justify-between items-center border-b-2 border-gray-100 md:justify-start px-5 py-5 sm:py-0 md:px-10 md:space-x-10">
@@ -35,18 +35,17 @@
                     </button>
                 </div>
                 <nav class="hidden md:flex space-x-10">
-                    <a href="#"
-                        class="text-base font-poppins font-medium border-b-4 py-5 border-gray-700 text-gray-500 hover:text-gray-900">
+                    <a href="#home" id="nav1" class="text-base font-poppins font-medium py-5 border-b-4 border-gray-700 text-gray-500 hover:text-gray-900" onclick="navBar()">
                         Home
                     </a>
-                    <a href="#" class="text-base font-poppins font-medium py-5 text-gray-500 hover:text-gray-900">
+                    <a href="#news" id="nav2" class="text-base font-poppins font-medium py-5 text-gray-500 hover:text-gray-900" onclick="navBar()">
                         News
                     </a>
-                    <a href="#" class="text-base font-poppins font-medium py-5 text-gray-500 hover:text-gray-900">
-                        Gallery
-                    </a>
-                    <a href="#" class="text-base font-poppins font-medium py-5 text-gray-500 hover:text-gray-900">
+                    <a href="#about" id="nav4" class="text-base font-poppins font-medium py-5 text-gray-500 hover:text-gray-900" onclick="navBar()">
                         About
+                    </a>
+                    <a href="#gallery" id="nav3" class="text-base font-poppins font-medium py-5 text-gray-500 hover:text-gray-900" onclick="navBar()">
+                        Gallery
                     </a>
                 </nav>
                 <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
