@@ -21,3 +21,6 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // News Page
 Route::get('page', [PageController::class, 'index'])->name('news');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
