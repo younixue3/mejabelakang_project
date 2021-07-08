@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,8 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::resource('/', HomeController::class);
+// Home Page
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+// News Page
+Route::get('page', [PageController::class, 'index'])->name('news');

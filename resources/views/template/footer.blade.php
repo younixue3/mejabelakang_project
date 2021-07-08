@@ -1,8 +1,8 @@
-        <div class="bg-gray-700 p-11 text-white text-left font-poppins">
-                <div class="float-left flex">
+        <div class="bg-gray-700 p-2 md:p-11 text-white text-left font-poppins text-center">
+                <div class="md:float-left">
                     <span class=" mr-1">Made with by ricko.tiaka</span>
                 </div>
-                <div class="float-right flex">
+                <div class="md:float-right mx-auto md:mx-0">
                     <button>
                         <img class="w-7 h-7 mx-1" src="https://img.icons8.com/ios-filled/500/ffffff/facebook-new.png"/>
                     </button>

@@ -3,24 +3,27 @@
 @section('content')
 <div class="pl-0 sm:pl-1/6 font-poppins">
     <div class="border-gray-100 border-l-0 sm:border-l-2">
-        <div class="md:flex md:flex-row-reverse p-5 -ml-5" id="news">
-            <div class="px-2 md:px-8 md:w-1/2">
-                <div class="bg-white rounded-xl shadow-xl">
-                    <img class="h-80 w-full object-cover rounded-t-xl"
-                        src="{{ asset('img/beautiful-smart-asian-young-entrepreneur-business-woman-owner-sme-checking-product-stock-scan-qr-code-working-home.jpg') }}"
-                        alt="">
-                    <div class="p-2 pt-1 text-right">
-                        <span class="font-light text-xs">6 July, 2021</span>
-                        <div class="px-3 text-left font-normal text-sm">
-                            <h1 class="text-lg">Lorem ipsum, dolor sit amet </h1>
-                            <p class="my-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium iusto,
-                                quo ad laboriosam velit voluptatibus itaque adipisci? Praesentium et aperiam atque
-                                ullam. Eaque, ex odit alias atque blanditiis totam voluptates.</p>
+        <div class="lg:flex lg:flex-row-reverse p-5 -ml-5" id="news">
+            <div class="px-2 pb-5 lg:px-8 lg:w-1/2 ">
+                <a href="{{route('news')}}">
+                    <div class="bg-white rounded-xl shadow-xl">
+                        <img class="h-80 w-full object-cover rounded-t-xl"
+                            src="{{ asset('img/beautiful-smart-asian-young-entrepreneur-business-woman-owner-sme-checking-product-stock-scan-qr-code-working-home.jpg') }}"
+                            alt="">
+                        
+                        <div class="p-2 pt-1 text-right">
+                            <span class="font-light text-xs">6 July, 2021</span>
+                            <div class="px-3 text-left font-normal text-sm">
+                                <h1 class="text-lg">Lorem ipsum, dolor sit amet </h1>
+                                <p class="my-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium iusto,
+                                    quo ad laboriosam velit voluptatibus itaque adipisci? Praesentium et aperiam atque
+                                    ullam. Eaque, ex odit alias atque blanditiis totam voluptates.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-10">
+            <div class="grid grid-cols-2 gap-x-4 gap-y-10">
                 <div class="cursor-pointer transform transition duration-500 ease-in-out scale-95 hover:scale-100 bg-white rounded-xl shadow-md hover:shadow-xl">
                     <img class="h-48 object-cover rounded-t-xl"
                         src="{{ asset('img/beautiful-asian-muslim-lady-casual-wear-working-using-laptop-modern-new-normal-office.jpg') }}"
@@ -61,28 +64,6 @@
                     <div class="p-2 pt-1 text-right">
                         <span class="font-light text-xs">6 July, 2021</span>
                         <div class="px-2 text-left font-normal text-sm">
-                            <h1 class="text-lg">Lorem ipsum, dolor sit amet </h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="cursor-pointer transform transition duration-500 ease-in-out scale-95 hover:scale-100 bg-white rounded-xl shadow-md hover:shadow-xl">
-                    <img class="h-48 object-cover rounded-t-xl"
-                        src="{{ asset('img/beautiful-smart-asian-young-entrepreneur-business-woman-owner-sme-checking-product-stock-scan-qr-code-working-home.jpg') }}"
-                        alt="">
-                    <div class="p-2 pt-1 text-right">
-                        <span class="font-light text-xs">6 July, 2021</span>
-                        <div class="px-3 text-left font-normal text-sm">
-                            <h1 class="text-lg">Lorem ipsum, dolor sit amet </h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="cursor-pointer transform transition duration-500 ease-in-out scale-95 hover:scale-100 bg-white rounded-xl shadow-md hover:shadow-xl">
-                    <img class="h-48 object-cover rounded-t-xl"
-                        src="{{ asset('img/beautiful-smart-asian-young-entrepreneur-business-woman-owner-sme-checking-product-stock-scan-qr-code-working-home.jpg') }}"
-                        alt="">
-                    <div class="p-2 pt-1 text-right">
-                        <span class="font-light text-xs">6 July, 2021</span>
-                        <div class="px-3 text-left font-normal text-sm">
                             <h1 class="text-lg">Lorem ipsum, dolor sit amet </h1>
                         </div>
                     </div>
@@ -90,14 +71,14 @@
             </div>
         </div>
         <div class="md:flex flex-row md:flex-row-reverse my-52" id="about">
-            <div class="text-left md:w-1/2">
+            <div class="text-left md:w-1/2 px-0 md:px-5">
                 <h1 class="text-6xl font-semibold">our value</h1>
-                <p class="text-md font-light w-full md:w-rd140">Lorem ipsum dolor sit, amet consectetur adipisicing
+                <p class="text-md font-light w-full">Lorem ipsum dolor sit, amet consectetur adipisicing
                     elit.
                     Assumenda
                     cupiditate cum natus itaque placeat corrupti minima inventore</p>
             </div>
-            <div class="grid grid-cols-2 grid-rows-2 gap-0">
+            <div class="grid grid-cols-2 grid-rows-2 gap-0 w-full md:w-1/2">
                 <div>
                     <img class="h-full w-full object-cover"
                         src="{{ asset('img/beautiful-smart-asian-young-entrepreneur-business-woman-owner-sme-checking-product-stock-scan-qr-code-working-home.jpg') }}"

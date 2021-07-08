@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Meja Belakang | @yield('title')</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 </head>
@@ -35,26 +35,23 @@
                     </button>
                 </div>
                 <nav class="hidden md:flex space-x-10">
-                    <a href="#home" id="nav1" class="text-base font-poppins font-medium py-5 border-b-4 border-gray-700 text-gray-500 hover:text-gray-900" onclick="navBar()">
+                    <a href="{{ Route::is('home') ? '#home' : '/' }}" id="nav1" class="text-base font-poppins font-medium py-5 {{ Route::is('home') ? 'border-b-4 border-gray-700' : '' }} text-gray-500 hover:text-gray-900" onclick="navBar()">
                         Home
                     </a>
-                    <a href="#news" id="nav2" class="text-base font-poppins font-medium py-5 text-gray-500 hover:text-gray-900" onclick="navBar()">
+                    <a href="{{ Route::is('home') ? '#news' : '/' }}" id="nav2" class="text-base font-poppins font-medium py-5 {{ Route::is('news') ? 'border-b-4 border-gray-700' : '' }} text-gray-500 hover:text-gray-900" onclick="navBar()">
                         News
                     </a>
-                    <a href="#about" id="nav4" class="text-base font-poppins font-medium py-5 text-gray-500 hover:text-gray-900" onclick="navBar()">
+                    <a href="{{ Route::is('home') ? '#about' : '/' }}" id="nav4" class="text-base font-poppins font-medium py-5 {{ Route::is('about') ? 'border-b-4 border-gray-700' : '' }} text-gray-500 hover:text-gray-900" onclick="navBar()">
                         About
                     </a>
-                    <a href="#gallery" id="nav3" class="text-base font-poppins font-medium py-5 text-gray-500 hover:text-gray-900" onclick="navBar()">
+                    <a href="{{ Route::is('home') ? '#gallery' : '/' }}" id="nav3" class="text-base font-poppins font-medium py-5 {{ Route::is('gallery') ? 'border-b-4 border-gray-700' : '' }} text-gray-500 hover:text-gray-900" onclick="navBar()">
                         Gallery
                     </a>
                 </nav>
                 <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-                    <a href="#" class="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
-                        Sign in
-                    </a>
                     <a href="#"
                         class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
-                        Sign up
+                        Dashboard
                     </a>
                 </div>
             </div>
