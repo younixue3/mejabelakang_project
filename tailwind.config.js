@@ -18,11 +18,13 @@ module.exports = {
           rd150 : '40rem',
           rd140 : '35rem',
           rd120 : '30rem',
+          rd100 : '29rem',
         },
         width: {
           rd150 : '40rem',
           rd140 : '35rem',
           rd120 : '30rem',
+          rd100 : '29rem',
         },
         margin: {
           '1/4' : '25%'

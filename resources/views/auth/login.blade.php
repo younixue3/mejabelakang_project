@@ -1,13 +1,45 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+<div class="">
+    {{-- <div class="grid grid-cols-1 justify-center">
+        <div> --}}
+            <div class="bg-white rounded-3xl flex p-3 w-2/5 h-rd100 my-32 mx-auto">
+                @error('email')
+                    <div class="bg-gradient-to-t from-red-600 to-red-400 rounded-xl p-10 w-96 text-white">
+                        <div class="text-4xl font-bold">{{ __('Error') }}</div>
+                        <p class="my-14">{{$message}}</p>
+                    </div>
+                @else
+                    @error('password')
+                        <div class="bg-gradient-to-t from-red-600 to-red-400 rounded-xl p-10 w-96 text-white">
+                            <div class="text-4xl font-bold">{{ __('Error') }}</div>
+                            <p class="my-14">{{$message}}</p>
+                        </div>
+                    @else
+                        <div class="bg-gradient-to-t from-blue-600 to-blue-400 rounded-xl p-10 w-96 text-white">
+                            <div class="text-4xl font-bold">{{ __('Login') }}</div>
+                            <p class="my-14">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio explicabo sed quisquam</p>
+                        </div>
+                    @enderror
+                @enderror
+                <form class="grid pl-10 text-xl place-items-center w-full" method="POST" action="{{ route('login') }}">
+                    @csrf
+                    <div class="grid w-full">
+                        <input id="email" class="border-b-2 border-gray-400 w-3/4 focus:outline-none text-lg placeholder-opacity-50 pl-1 py-2 @error('email') is-invalid @enderror" type="text"  value="{{ old('email') }}" required autocomplete="email" name="email" placeholder="{{ __('E-Mail Address') }}" autofocus>
+                        <input id="password" class="border-b-2 border-gray-400 w-3/4 focus:outline-none text-lg placeholder-opacity-50 pl-1 py-2 @error('password') is-invalid @enderror" type="password" required autocomplete="current-password" name="password" placeholder="{{ __('Password') }}">
+                        <label class="mt-2">
+                            <input class="h-4 w-4 " type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}><span class="text-sm ml-2">{{ __('Remember Me') }}</span>
+                        </label>
+                    </div>
+                    <div class="flex ">
+                        <button type="submit" class="text-white bg-gray-700 rounded-xl mx-1 px-3 py-0.5">Login</button>
+                        <button class="border-2 border-gray-700 text-gray-700 rounded-xl mx-1 px-3 py-0.5">Cancel</button>
+                    </div>
+                </form>
+                {{-- <div class="text-white bg-gray-600">{{ __('Login') }}</div>
 
-                <div class="card-body">
+                <div class="">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -65,9 +97,9 @@
                             </div>
                         </div>
                     </form>
-                </div>
+                </div> --}}
             </div>
-        </div>
-    </div>
+        {{-- </div>
+    </div> --}}
 </div>
 @endsection
