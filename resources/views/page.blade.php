@@ -1,4 +1,4 @@
-@extends('template/master')
+@extends('template/public/master')
 @section('title', 'Page')
 @section('content')
 <div class="pl-0 sm:pl-1/6 font-poppins">

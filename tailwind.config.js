@@ -28,13 +28,17 @@ module.exports = {
         },
         margin: {
           '1/4' : '25%'
+        },
+        overflow: {
+          none : 'none'
         }
     },
   },
   variants: {
     extend: {
       grayscale: ['hover'],
-      opacity: ['hover']
+      opacity: ['hover'],
+      width: ['hover']
     },
   },
   plugins: [],
