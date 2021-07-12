@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\GalleryController;
 
 // use Auth;
 
@@ -28,8 +30,10 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::group(['prefix' => 'dashboard'], function() {
-    Route::get('/', [DashboardController::class, 'index']);
+Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function() {
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/news', [NewsController::class, 'index'])->name('news');
+    Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 });
 // Route::get("/logout", function() {
 Route::get('/logout', function() {

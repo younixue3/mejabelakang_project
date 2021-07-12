@@ -23,11 +23,11 @@
                         </div>
                     @enderror
                 @enderror
-                <form class="grid pl-10 text-xl place-items-center w-full" method="POST" action="{{ route('login') }}">
+                <form class="grid pl-6 text-xl place-items-center w-full" method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="grid w-full">
-                        <input id="email" class="border-b-2 border-gray-400 w-3/4 focus:outline-none text-lg placeholder-opacity-50 pl-1 py-2 @error('email') is-invalid @enderror" type="email"  value="{{ old('email') }}" required autocomplete="email" name="email" placeholder="{{ __('E-Mail Address') }}" autofocus>
-                        <input id="password" class="border-b-2 border-gray-400 w-3/4 focus:outline-none text-lg placeholder-opacity-50 pl-1 py-2 @error('password') is-invalid @enderror" type="password" required autocomplete="current-password" name="password" placeholder="{{ __('Password') }}">
+                        <input id="email" class="border-b-2 border-gray-400 mr-10 focus:outline-none text-lg placeholder-opacity-50 pl-1 py-2 @error('email') is-invalid @enderror" type="email"  value="{{ old('email') }}" required autocomplete="email" name="email" placeholder="{{ __('E-Mail Address') }}" autofocus>
+                        <input id="password" class="border-b-2 border-gray-400 mr-10 focus:outline-none text-lg placeholder-opacity-50 pl-1 py-2 @error('password') is-invalid @enderror" type="password" required autocomplete="current-password" name="password" placeholder="{{ __('Password') }}">
                         <label class="mt-2">
                             <input class="h-4 w-4 " type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}><span class="text-sm ml-2">{{ __('Remember Me') }}</span>
                         </label>

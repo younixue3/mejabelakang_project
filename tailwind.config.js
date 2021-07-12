@@ -28,9 +28,6 @@ module.exports = {
         },
         margin: {
           '1/4' : '25%'
-        },
-        overflow: {
-          none : 'none'
         }
     },
   },

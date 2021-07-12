@@ -23,9 +23,9 @@
                     </div>
                 </a>
             </div>
-            <div class="grid grid-cols-2 gap-x-4 gap-y-10">
+            <div class="grid grid-cols-2 gap-x-4 gap-y-10 w-1/2">
                 <div class="cursor-pointer transform transition duration-500 ease-in-out scale-95 hover:scale-100 bg-white rounded-xl shadow-md hover:shadow-xl">
-                    <img class="h-48 object-cover rounded-t-xl"
+                    <img class="h-48 w-full object-cover rounded-t-xl"
                         src="{{ asset('img/beautiful-asian-muslim-lady-casual-wear-working-using-laptop-modern-new-normal-office.jpg') }}"
                         alt="">
                     <div class="p-2 pt-1 text-right">
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="cursor-pointer transform transition duration-500 ease-in-out scale-95 hover:scale-100 bg-white rounded-xl shadow-md hover:shadow-xl">
-                    <img class="h-48 object-cover rounded-t-xl"
+                    <img class="h-48 w-full object-cover rounded-t-xl"
                         src="{{ asset('img/beautiful-smart-asian-young-entrepreneur-business-woman-owner-sme-checking-product-stock-scan-qr-code-working-home.jpg') }}"
                         alt="">
                     <div class="p-2 pt-1 text-right">
@@ -47,7 +47,7 @@
                     </div>
                 </div>
                 <div class="cursor-pointer transform transition duration-500 ease-in-out scale-95 hover:scale-100 bg-white rounded-xl shadow-md hover:shadow-xl">
-                    <img class="h-48 object-cover rounded-t-xl"
+                    <img class="h-48 w-full object-cover rounded-t-xl"
                         src="{{ asset('img/beautiful-smart-asian-young-entrepreneur-business-woman-owner-sme-checking-product-stock-scan-qr-code-working-home.jpg') }}"
                         alt="">
                     <div class="p-2 pt-1 text-right">
@@ -58,7 +58,7 @@
                     </div>
                 </div>
                 <div class="cursor-pointer transform transition duration-500 ease-in-out scale-95 hover:scale-100 bg-white rounded-xl shadow-md hover:shadow-xl">
-                    <img class="h-48 object-cover rounded-t-xl"
+                    <img class="h-48 w-full object-cover rounded-t-xl"
                         src="{{ asset('img/beautiful-asian-muslim-lady-casual-wear-working-using-laptop-modern-new-normal-office.jpg') }}"
                         alt="">
                     <div class="p-2 pt-1 text-right">
