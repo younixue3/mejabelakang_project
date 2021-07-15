@@ -41,8 +41,9 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         if ($this->data->store_data($request)) {
-            return redirect()->route('news/index')->with('success', 'sukses');
+            return redirect()->route('gallery')->with('success', 'sukses');
         }
         return redirect()->back()->with('error', 'gagal');
     }
@@ -66,7 +67,11 @@ class GalleryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $gallery = $this->data->get_edit_data($id);
+
+        $data = compact('gallery');
+
+        return view('dashboard.data.gallery.edit', $data);
     }
 
     /**
@@ -78,7 +83,10 @@ class GalleryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if ($this->data->update_data($request, $id)) {
+            return redirect()->route('gallery')->with('success', 'sukses');
+        }
+        return redirect()->back()->with('error', 'gagal');
     }
 
     /**
@@ -89,6 +97,9 @@ class GalleryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if ($this->data->destroy_data($id)) {
+            return redirect()->route('gallery')->with('success', 'sukses');
+        }
+        return redirect()->back()->with('error', 'gagal');
     }
 }

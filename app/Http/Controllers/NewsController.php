@@ -4,16 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Http\Controllers\data\NewsController as DataController;
+
 class NewsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+    public function __construct(DataController $data)
+    {
+        $this->data = $data;
+    }
+    
     public function index()
     {
-        return view('dashboard.news');
+        $news = $this->data->get_data();
+
+        $data = compact('news');
+
+        return view('dashboard.news', $data);
     }
 
     /**
@@ -23,7 +30,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.data.news.add');
     }
 
     /**
@@ -34,7 +41,11 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        if ($this->data->store_data($request)) {
+            return redirect()->route('news')->with('success', 'sukses');
+        }
+        return redirect()->back()->with('error', 'gagal');
     }
 
     /**
@@ -56,7 +67,11 @@ class NewsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $news = $this->data->get_edit_data($id);
+
+        $data = compact('news');
+
+        return view('dashboard.data.news.edit', $data);
     }
 
     /**
@@ -68,7 +83,10 @@ class NewsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if ($this->data->update_data($request, $id)) {
+            return redirect()->route('news')->with('success', 'sukses');
+        }
+        return redirect()->back()->with('error', 'gagal');
     }
 
     /**
@@ -79,6 +97,9 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if ($this->data->destroy_data($id)) {
+            return redirect()->route('news')->with('success', 'sukses');
+        }
+        return redirect()->back()->with('error', 'gagal');
     }
 }

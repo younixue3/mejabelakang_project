@@ -32,9 +32,19 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function() {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    // News
+    Route::get('/news/add', [NewsController::class, 'create'])->name('news.add');
+    Route::get('/news/edit/{id}', [NewsController::class, 'edit'])->name('news.edit');
+    Route::put('/news/update/{id}', [NewsController::class, 'update'])->name('news.update');
+    Route::get('/news/destroy/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
+    Route::post('/news/store', [NewsController::class, 'store'])->name('news.store');
     Route::get('/news', [NewsController::class, 'index'])->name('news');
+    // Gallery
     Route::get('/gallery/add', [GalleryController::class, 'create'])->name('gallery.add');
-    Route::get('/gallery/store', [GalleryController::class, 'store'])->name('gallery.store');
+    Route::get('/gallery/edit/{id}', [GalleryController::class, 'edit'])->name('gallery.edit');
+    Route::put('/gallery/update/{id}', [GalleryController::class, 'update'])->name('gallery.update');
+    Route::get('/gallery/destroy/{id}', [GalleryController::class, 'destroy'])->name('gallery.destroy');
+    Route::post('/gallery/store', [GalleryController::class, 'store'])->name('gallery.store');
     Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 });
 // Route::get("/logout", function() {

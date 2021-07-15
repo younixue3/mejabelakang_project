@@ -18,6 +18,8 @@
 </head>
 
 <body class="font-poppins" id="home">
+    {{-- <div id="app"> --}}
+        {{-- <template> --}}
     <div class="flex w-full h-full">
         <div id="mobile-menu" class="h-full md:h-auto z-50 w-0 fixed md:w-80 duration-300 hover:w-80 bg-white rounded shadow-md md:block md:static overflow-hidden md:overflow-none">
             <div class="font-bold text-xl h-16 pl-5 pr-2 md:pr-0 overflow-hidden truncate flex">
@@ -44,7 +46,7 @@
                     </a>
                     <a href="{{url('dashboard/news')}}">
                         <li
-                            class="px-2.5 py-2 my-2.5 {{ Route::is('news') ? 'bg-gray-200' : 'bg-white hover:bg-gray-200' }} rounded-xl overflow-hidden truncate">
+                            class="px-2.5 py-2 my-2.5 {{ Route::is('news') || Route::is('news.add')  ? 'bg-gray-200' : 'bg-white hover:bg-gray-200' }} rounded-xl overflow-hidden truncate">
                             <i class="fas fa-newspaper mr-3"></i><span id="newsItem">News</span></li>
                     </a>
                     <a href="{{url('dashboard/gallery')}}">

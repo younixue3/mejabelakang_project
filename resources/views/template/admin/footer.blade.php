@@ -1,6 +1,6 @@
 </div>
 </div>
-<div class="bg-gray-700 p-2 md:p-11 text-white text-left font-poppins text-center">
+<div class="bg-gray-700 p-2 md:p-11 text-white text-left font-poppins bottom-0">
     <div class="md:float-left">
         <span class=" mr-1">Made with by ricko.tiaka</span>
     </div>
@@ -15,6 +15,8 @@
             <img class="w-7 h-7 mx-1" src="https://img.icons8.com/material-outlined/480/ffffff/globe--v2.png" />
         </button>
     </div>
+{{-- </div> --}}
+{{-- </template> --}}
 </div>
 </body>
 
@@ -28,8 +30,8 @@
 </style>
 
 {{-- RD Javascript --}}
-{{-- <script src="{{ asset('js/index.js') }}"></script> --}}
-{{-- <script src="{{ asset('js/carousel.js') }}"></script> --}}
+<script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ asset('js/modal.js') }}"></script>
 <script src="{{ asset('js/myTinyMce.js') }}"></script>
 
 
