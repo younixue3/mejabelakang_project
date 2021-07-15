@@ -4,16 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Http\Controllers\data\GalleryController as DataController;
+
 class GalleryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+    public function __construct(DataController $data)
+    {
+        $this->data = $data;
+    }
+    
     public function index()
     {
-        return view('dashboard');
+        $gallery = $this->data->get_data();
+
+        $data = compact('gallery');
+
+        return view('dashboard.gallery', $data);
     }
 
     /**
@@ -23,7 +30,7 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.data.gallery.add');
     }
 
     /**
@@ -34,7 +41,10 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($this->data->store_data($request)) {
+            return redirect()->route('news/index')->with('success', 'sukses');
+        }
+        return redirect()->back()->with('error', 'gagal');
     }
 
     /**

@@ -8,6 +8,7 @@
     <title>Meja Belakang | @yield('title')</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    @include('template/library')
 </head>
 
 <body class="font-poppins" id="home">

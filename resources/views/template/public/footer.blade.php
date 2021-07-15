@@ -74,5 +74,3 @@
     } ]
     });
   </script>
-
-@include('template/library')

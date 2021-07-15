@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Login')
 @section('content')
 <div class="">
     {{-- <div class="grid grid-cols-1 justify-center">

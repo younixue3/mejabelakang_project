@@ -29,7 +29,9 @@
 
 {{-- RD Javascript --}}
 {{-- <script src="{{ asset('js/index.js') }}"></script> --}}
-<script src="{{ asset('js/carousel.js') }}"></script>
+{{-- <script src="{{ asset('js/carousel.js') }}"></script> --}}
+<script src="{{ asset('js/myTinyMce.js') }}"></script>
+
 
 {{-- JQuery --}}
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -41,6 +43,16 @@
     var openBar = document.getElementById('openBar');
     var closeBar = document.getElementById('closeBar');
     var mobileMenu = document.getElementById('mobile-menu');
+    var menuProfileButton = document.getElementById('menuProfileButton');
+    var menuProfile = document.getElementById('menuProfile');
+
+    menuProfileButton.onclick = function () {
+        if (menuProfile.classList.contains('hidden')) {
+            menuProfile.classList.remove('hidden');
+        } else {
+            menuProfile.classList.add('hidden');
+        }
+    }
 
     openBar.onclick = function () {
         if (mobileMenu.classList.contains('md:w-80')) {
@@ -130,5 +142,3 @@
     });
 
 </script>
-
-@include('template/library')

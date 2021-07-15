@@ -1,18 +1,20 @@
 @extends('template/admin/master')
-@section('title', 'News')
+@section('title', 'Gallery')
 @section('content')
 <header class="bg-white shadow">
   <div class="max-w-7xl px-12 py-8">
       <h1 class="text-3xl font-bold text-gray-900">
-        News
+        {{$gallery}}
       </h1>
   </div>
 </header>
 <main>
     <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
         <!-- Replace with your content -->
-        <button class="h-10 w-20 float-right bg-green-500 hover:bg-green-600 text-white text-center rounded-lg"><i
-          class="fas fa-plus mr-2"></i>Add</button>
+        <a href="{{route('gallery.add')}}">
+            <button class="h-10 w-20 float-right bg-green-500 hover:bg-green-600 text-white text-center rounded-lg"><i
+              class="fas fa-plus mr-2"></i>Add</button>
+        </a>
         <div class="grid grid-rows-5 gap-y-5 px-4 py-6 sm:px-0 mt-10">
             <div class="bg-white shadow-xl rounded-3xl p-3 md:flex">
                 <img class="w-96 object-cover rounded-2xl"

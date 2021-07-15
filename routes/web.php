@@ -33,6 +33,8 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function() {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/news', [NewsController::class, 'index'])->name('news');
+    Route::get('/gallery/add', [GalleryController::class, 'create'])->name('gallery.add');
+    Route::get('/gallery/store', [GalleryController::class, 'store'])->name('gallery.store');
     Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 });
 // Route::get("/logout", function() {
