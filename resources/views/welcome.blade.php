@@ -113,8 +113,8 @@
             <img class="shadow-md object-cover rounded-3xl" id="image_modal"
             src=""
             alt="">
-            <button @click="closeImg" class="absolute z-10 top-2 right-2 bg-gray-500 text-white opacity-80 hover:opacity-100 w-7 h-7 rounded-full"><i class="fas fa-times"></i></button>
         </a>
+        <button @click="closeImg" class="absolute z-10 top-2 right-2 bg-gray-500 text-white opacity-80 hover:opacity-100 w-7 h-7 rounded-full"><i class="fas fa-times"></i></button>
     </div>
 </div>
 @endsection

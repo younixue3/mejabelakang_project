@@ -47,6 +47,7 @@
                     </div>
                 </div>
             @endforeach
+            {{$news->links()}}
         </div>
         <!-- /End replace -->
     </div>
