@@ -41,12 +41,17 @@ class DashboardController extends Controller
     public function get_total_content()
     {
         if (News::count() == null ) {
-            # code...
+            $news = 0;
         } else {
-            # code...
+            $news = News::count();
+        }
+        if (Gallery::count() == null) {
+            $gallery = 0;
+        } else {
+            $gallery = Gallery::count();
         }
         
-        $data = News::count() + Gallery::count();
+        $data = $news + $gallery;
         
         return $data;
     }

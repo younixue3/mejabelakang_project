@@ -13,6 +13,7 @@
 
 <body class="font-poppins" id="home">
     <!-- This example requires Tailwind CSS v2.0+ -->
+    <div id="appJs">
     <div class="fixed w-screen bg-white z-50">
         <div>
             <div
@@ -39,13 +40,13 @@
                     <a href="{{ Route::is('home') ? '#home' : '/' }}" id="nav1" class="text-base font-poppins font-medium py-5 {{ Route::is('home') ? 'border-b-4 border-gray-700' : '' }} text-gray-500 hover:text-gray-900" onclick="navBar()">
                         Home
                     </a>
-                    <a href="{{ Route::is('home') ? '#news' : '/' }}" id="nav2" class="text-base font-poppins font-medium py-5 {{ Route::is('news') ? 'border-b-4 border-gray-700' : '' }} text-gray-500 hover:text-gray-900" onclick="navBar()">
+                    <a href="{{ Route::is('home') ? '#news' : '/' }}" id="nav2" class="text-base font-poppins font-medium py-5 {{ Route::is('news') || Route::is('page.news') ? 'border-b-4 border-gray-700' : '' }} text-gray-500 hover:text-gray-900" onclick="navBar()">
                         News
                     </a>
                     <a href="{{ Route::is('home') ? '#about' : '/' }}" id="nav4" class="text-base font-poppins font-medium py-5 {{ Route::is('about') ? 'border-b-4 border-gray-700' : '' }} text-gray-500 hover:text-gray-900" onclick="navBar()">
                         About
                     </a>
-                    <a href="{{ Route::is('home') ? '#gallery' : '/' }}" id="nav3" class="text-base font-poppins font-medium py-5 {{ Route::is('gallery') ? 'border-b-4 border-gray-700' : '' }} text-gray-500 hover:text-gray-900" onclick="navBar()">
+                    <a href="{{ Route::is('home') ? '#gallery' : '/' }}" id="nav3" class="text-base font-poppins font-medium py-5 {{ Route::is('gallery') || Route::is('page.gallery') ? 'border-b-4 border-gray-700' : '' }} text-gray-500 hover:text-gray-900" onclick="navBar()">
                         Gallery
                     </a>
                 </nav>

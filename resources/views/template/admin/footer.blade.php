@@ -55,7 +55,7 @@
 
 {{-- RD Javascript --}}
 <script src="{{ asset('js/app.js') }}"></script>
-@if (Route::is('gallery') || Route::is('news'))
+@if (Route::is('gallery') || Route::is('news    '))
     <script src="{{ asset('js/modal.js') }}"></script>
 @else
 @endif

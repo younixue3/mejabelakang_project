@@ -26,7 +26,7 @@ class GalleryController extends Controller
 
     public function store_data(Request $request)
     {
-        dd($request);
+        // dd($request);
         $this->validate($request, [
             'img' => 'mimes:jpeg,jpg,png,svg|dimensions: max_width = 2464, max_height = 2464|max:2500',
         ]);
@@ -50,6 +50,7 @@ class GalleryController extends Controller
     {
         $gallery = Gallery::findOrFail($id);
         $gallery->title = $request->title;
+        $gallery->sub_content = $request->sub_content;
         $gallery->content = $request->content;
         $gallery->user_id = Auth::id();
         $filename = rand('00000','99999').'.png';

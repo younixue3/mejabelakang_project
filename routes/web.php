@@ -25,7 +25,8 @@ use App\Http\Controllers\GalleryController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // News Page
-Route::get('page/{id}', [HomeController::class, 'show'])->name('page');
+Route::get('page/news/{id}', [HomeController::class, 'show'])->name('page.news');
+Route::get('page/gallery/{id}', [HomeController::class, 'showgallery'])->name('page.gallery');
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');

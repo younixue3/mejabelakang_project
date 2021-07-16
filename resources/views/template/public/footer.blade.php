@@ -1,4 +1,4 @@
-        <div class="z-10 bg-gray-700 p-2 md:p-11 text-white text-left font-poppins text-center">
+        <div class="z-10 bg-gray-700 p-2 md:p-11 text-white text-left font-poppins">
                 <div class="md:float-left">
                     <span class=" mr-1">Made with by ricko.tiaka</span>
                 </div>
@@ -14,6 +14,7 @@
                     </button>
                 </div>
         </div>
+        </div>
     </body>
 </html>
 
@@ -24,8 +25,10 @@
 </style>
 
 {{-- RD Javascript --}}
+<script src="{{ asset('js/app.js') }}"></script>
 <script src="{{ asset('js/index.js') }}"></script>
 <script src="{{ asset('js/carousel.js') }}"></script>
+<script src="{{ asset('js/modal.js') }}"></script>
 
 {{-- JQuery --}}
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>

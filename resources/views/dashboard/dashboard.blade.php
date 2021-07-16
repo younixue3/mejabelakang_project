@@ -19,10 +19,10 @@
             @else
             <div class="w-full md:w-3/4 mr-5 grid grid-cols-1 grid-rows-4 md:grid-cols-2 md:grid-rows-3 gap-3 truncate pb-10">
                 <div class="shadow-xl row-span-3 rounded-2xl h-full w-full flex relative">
-                    <img class="rounded-2xl h-96 object-cover" src="{{ asset('Upload/image_content/'.$gallery->image_content) }}" alt="">
+                    <img class="rounded-2xl h-96 object-cover" src="{{ asset('Upload/image_content/'.$news->image_content) }}" alt="">
                     <div class="absolute bg-gradient-to-t bottom-0 z-10 px-5 h-full w-full from-gray-800 text-white rounded-2xl">
                         <div class="m-auto pt-1/6">
-                            <h1 class="text-2xl font-bold truncate">{{$gallery->title}}</h1>
+                            <h1 class="text-2xl font-bold truncate">{{$news->title}}</h1>
                             <div>
                                 <i class="fas fa-eye"></i> 153
                             </div>
