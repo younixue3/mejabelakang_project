@@ -18,7 +18,7 @@
 </head>
 
 <body class="font-poppins" id="home">
-    {{-- <div id="app"> --}}
+    <div id="appJs">
         {{-- <template> --}}
     <div class="flex w-full h-full">
         <div id="mobile-menu" class="h-full md:h-auto z-50 w-0 fixed md:w-80 duration-300 hover:w-80 bg-white rounded shadow-md md:block md:static overflow-hidden md:overflow-none">

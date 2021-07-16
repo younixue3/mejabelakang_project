@@ -95,9 +95,9 @@ class GalleryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        if ($this->data->destroy_data($id)) {
+        if ($this->data->destroy_data($request)) {
             return redirect()->route('gallery')->with('success', 'sukses');
         }
         return redirect()->back()->with('error', 'gagal');

@@ -4,8 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Http\Controllers\data\DashboardController as DataController;
+
 class DashboardController extends Controller
 {
+    public function __construct(DataController $data)
+    {
+        $this->data = $data;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +20,15 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard.dashboard');
+        $news = $this->data->get_data();
+        $news2nd = $this->data->get_second_data();
+        $count_gallery = $this->data->get_total_gallery();
+        $count_news = $this->data->get_total_news();
+        $count_content = $this->data->get_total_content();
+
+        $data = compact('news', 'news2nd', 'count_gallery', 'count_news', 'count_content');
+
+        return view('dashboard.dashboard', $data);
     }
 
     /**

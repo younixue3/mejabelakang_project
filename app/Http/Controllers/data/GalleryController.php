@@ -26,12 +26,13 @@ class GalleryController extends Controller
 
     public function store_data(Request $request)
     {
-        // dd($request->file('image_content'));
+        dd($request);
         $this->validate($request, [
             'img' => 'mimes:jpeg,jpg,png,svg|dimensions: max_width = 2464, max_height = 2464|max:2500',
         ]);
         $gallery = new Gallery;
         $gallery->title = $request->title;
+        $gallery->sub_content = $request->sub_content;
         $gallery->content = $request->content;
         $gallery->user_id = Auth::id();
         $filename = rand('00000','99999').'.png';
@@ -61,9 +62,10 @@ class GalleryController extends Controller
         return $gallery->save();
     }
 
-    public function destroy_data($id)
+    public function destroy_data($request)
     {
-        $gallery = Gallery::findOrFail($id)->delete();
+        // dd($request);
+        $gallery = Gallery::findOrFail($request->id)->delete();
         return $gallery;
     }
 }

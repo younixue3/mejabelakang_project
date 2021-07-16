@@ -14,14 +14,26 @@
 
 var app = new Vue({
     el: '#appJs',
-    // data() {
-    //     return {
-    //         hideModal: true
-    //     }
-    // },
+    data: {
+        isHidden: 'hidden'
+    },
     methods: {
-        testaja(event){
-            console.log(event.target)
+        openModal(event){
+            var modals_rd = document.getElementById('modals_rd')
+            if (modals_rd.classList.contains('hidden')) {
+                modals_rd.classList.remove('hidden')
+            } else {
+                modals_rd.classList.add('hidden')
+            }
+            console.log(event.target.dataset.target)
+            var id = document.getElementById('id_destroy')
+            id.value = event.target.dataset.target
+        },
+        closeModal(){
+            var modals_rd = document.getElementById('modals_rd')
+            modals_rd.classList.add('hidden')
+            var id = document.getElementById('id_destroy')
+            id.value = null
         }
     }
 })

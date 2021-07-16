@@ -25,7 +25,7 @@ use App\Http\Controllers\GalleryController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // News Page
-Route::get('page', [PageController::class, 'index'])->name('news');
+Route::get('page/{id}', [HomeController::class, 'show'])->name('page');
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
@@ -36,14 +36,14 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function() {
     Route::get('/news/add', [NewsController::class, 'create'])->name('news.add');
     Route::get('/news/edit/{id}', [NewsController::class, 'edit'])->name('news.edit');
     Route::put('/news/update/{id}', [NewsController::class, 'update'])->name('news.update');
-    Route::get('/news/destroy/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
+    Route::post('/news/destroy', [NewsController::class, 'destroy'])->name('news.destroy');
     Route::post('/news/store', [NewsController::class, 'store'])->name('news.store');
     Route::get('/news', [NewsController::class, 'index'])->name('news');
     // Gallery
     Route::get('/gallery/add', [GalleryController::class, 'create'])->name('gallery.add');
     Route::get('/gallery/edit/{id}', [GalleryController::class, 'edit'])->name('gallery.edit');
     Route::put('/gallery/update/{id}', [GalleryController::class, 'update'])->name('gallery.update');
-    Route::get('/gallery/destroy/{id}', [GalleryController::class, 'destroy'])->name('gallery.destroy');
+    Route::post('/gallery/destroy', [GalleryController::class, 'destroy'])->name('gallery.destroy');
     Route::post('/gallery/store', [GalleryController::class, 'store'])->name('gallery.store');
     Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 });

@@ -20,6 +20,12 @@
             </label>
             <label>
                 <div class="font-semibold">
+                    Sub Content
+                </div>
+                <textarea id="tinymcesub" id="subcontent" name="sub_content" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit dolor consectetur aspernatur consequuntur sequi vero, eius, incidunt provident non laudantium sed recusandae ratione placeat nesciunt repudiandae temporibus ipsam natus fuga?"></textarea>
+            </label>
+            <label>
+                <div class="font-semibold">
                     Isi Konten
                 </div>
                 <textarea id="tinymce" id="content" name="content" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit dolor consectetur aspernatur consequuntur sequi vero, eius, incidunt provident non laudantium sed recusandae ratione placeat nesciunt repudiandae temporibus ipsam natus fuga?"></textarea>

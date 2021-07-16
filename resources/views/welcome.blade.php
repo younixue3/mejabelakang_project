@@ -3,73 +3,46 @@
 @section('content')
 <div class="pl-0 sm:pl-1/6 font-poppins">
     <div class="border-gray-100 border-l-0 sm:border-l-2">
+        @if ($gallery == null)
+            <div class="w-full md:w-3/4 p-5 text-center self-center text-4xl font-bold ">Data Kosong</div>
+        @else
         <div class="lg:flex lg:flex-row-reverse p-5 -ml-5" id="news">
             <div class="px-2 pb-5 lg:px-8 lg:w-1/2 ">
-                <a href="{{route('news')}}">
+                <a href="{{route('page', $gallery->id)}}">
                     <div class="bg-white rounded-xl shadow-xl">
                         <img class="h-80 w-full object-cover rounded-t-xl"
-                            src="{{ asset('img/beautiful-smart-asian-young-entrepreneur-business-woman-owner-sme-checking-product-stock-scan-qr-code-working-home.jpg') }}"
+                            src="{{ asset('Upload/image_content/'.$gallery->image_content) }}"
                             alt="">
                         
-                        <div class="p-2 pt-1 text-right">
-                            <span class="font-light text-xs">6 July, 2021</span>
+                        <div class="p-2 pt-1 text-right overflow-hidden">
+                            <span class="font-light text-xs">{{$gallery->created_at->format('d F , Y')}}</span>
                             <div class="px-3 text-left font-normal text-sm">
-                                <h1 class="text-lg">Lorem ipsum, dolor sit amet </h1>
-                                <p class="my-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium iusto,
-                                    quo ad laboriosam velit voluptatibus itaque adipisci? Praesentium et aperiam atque
-                                    ullam. Eaque, ex odit alias atque blanditiis totam voluptates.</p>
+                                <h1 class="text-lg">{{$gallery->title}}</h1>
+                                <div class="my-5 h-16 leading-normal truncate whitespace-normal">{!!$gallery->content!!}</div>
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="grid grid-cols-2 gap-x-4 gap-y-10 w-1/2">
-                <div class="cursor-pointer transform transition duration-500 ease-in-out scale-95 hover:scale-100 bg-white rounded-xl shadow-md hover:shadow-xl">
-                    <img class="h-48 w-full object-cover rounded-t-xl"
-                        src="{{ asset('img/beautiful-asian-muslim-lady-casual-wear-working-using-laptop-modern-new-normal-office.jpg') }}"
-                        alt="">
-                    <div class="p-2 pt-1 text-right">
-                        <span class="font-light text-xs">6 July, 2021</span>
-                        <div class="px-2 text-left font-normal text-sm">
-                            <h1 class="text-lg">Lorem ipsum, dolor sit amet </h1>
+            <div class="grid grid-cols-2 gap-x-4 gap-y-10 md:w-1/2">
+                @foreach ($gallery2nd as $item)
+                <a href="{{route('page', $item->id)}}">
+                    <div class="cursor-pointer h-64 transform transition duration-500 ease-in-out scale-95 hover:scale-100 bg-white rounded-xl shadow-md hover:shadow-xl">
+                        <img class="h-48 w-full object-cover rounded-t-xl"
+                            src="{{ asset('Upload/image_content/'.$item->image_content) }}"
+                            alt="">
+                        <div class="p-2 pt-1 text-right">
+                            <span class="font-light text-xs">{{$item->created_at->format('d F , Y')}}</span>
+                            <div class="px-2 text-left font-normal text-sm overflow-hidden">
+                                <h1 class="text-lg">{{$item->title}}</h1>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="cursor-pointer transform transition duration-500 ease-in-out scale-95 hover:scale-100 bg-white rounded-xl shadow-md hover:shadow-xl">
-                    <img class="h-48 w-full object-cover rounded-t-xl"
-                        src="{{ asset('img/beautiful-smart-asian-young-entrepreneur-business-woman-owner-sme-checking-product-stock-scan-qr-code-working-home.jpg') }}"
-                        alt="">
-                    <div class="p-2 pt-1 text-right">
-                        <span class="font-light text-xs">6 July, 2021</span>
-                        <div class="px-3 text-left font-normal text-sm">
-                            <h1 class="text-lg">Lorem ipsum, dolor sit amet </h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="cursor-pointer transform transition duration-500 ease-in-out scale-95 hover:scale-100 bg-white rounded-xl shadow-md hover:shadow-xl">
-                    <img class="h-48 w-full object-cover rounded-t-xl"
-                        src="{{ asset('img/beautiful-smart-asian-young-entrepreneur-business-woman-owner-sme-checking-product-stock-scan-qr-code-working-home.jpg') }}"
-                        alt="">
-                    <div class="p-2 pt-1 text-right">
-                        <span class="font-light text-xs">6 July, 2021</span>
-                        <div class="px-3 text-left font-normal text-sm">
-                            <h1 class="text-lg">Lorem ipsum, dolor sit amet </h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="cursor-pointer transform transition duration-500 ease-in-out scale-95 hover:scale-100 bg-white rounded-xl shadow-md hover:shadow-xl">
-                    <img class="h-48 w-full object-cover rounded-t-xl"
-                        src="{{ asset('img/beautiful-asian-muslim-lady-casual-wear-working-using-laptop-modern-new-normal-office.jpg') }}"
-                        alt="">
-                    <div class="p-2 pt-1 text-right">
-                        <span class="font-light text-xs">6 July, 2021</span>
-                        <div class="px-2 text-left font-normal text-sm">
-                            <h1 class="text-lg">Lorem ipsum, dolor sit amet </h1>
-                        </div>
-                    </div>
-                </div>
+                </a>
+                @endforeach
             </div>
         </div>
+        @endif
         <div class="md:flex flex-row md:flex-row-reverse my-52" id="about">
             <div class="text-left md:w-1/2 px-0 md:px-5">
                 <h1 class="text-6xl font-semibold">our value</h1>

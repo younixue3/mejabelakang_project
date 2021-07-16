@@ -32,6 +32,7 @@ class newsController extends Controller
         ]);
         $news = new News;
         $news->title = $request->title;
+        $news->sub_content = $request->sub_content;
         $news->content = $request->content;
         $news->user_id = Auth::id();
         $filename = rand('00000','99999').'.png';
@@ -49,6 +50,7 @@ class newsController extends Controller
     {
         $news = News::findOrFail($id);
         $news->title = $request->title;
+        $news->sub_content = $request->sub_content;
         $news->content = $request->content;
         $news->user_id = Auth::id();
         $filename = rand('00000','99999').'.png';
@@ -61,9 +63,9 @@ class newsController extends Controller
         return $news->save();
     }
 
-    public function destroy_data($id)
+    public function destroy_data(Request $request)
     {
-        $news = News::findOrFail($id)->delete();
+        $news = News::findOrFail($request->id)->delete();
         return $news;
     }
 }

@@ -1,6 +1,6 @@
 </div>
 </div>
-<div class="bg-gray-700 p-2 md:p-11 text-white text-left font-poppins bottom-0">
+<div class="bg-gray-700 p-2 md:p-11 text-white text-left font-poppins text-center">
     <div class="md:float-left">
         <span class=" mr-1">Made with by ricko.tiaka</span>
     </div>
@@ -18,6 +18,30 @@
 {{-- </div> --}}
 {{-- </template> --}}
 </div>
+<div id="modals_rd" class="hidden">
+    <div class="fixed top-0 z-50 h-full w-full bg-black opacity-20" @click="closeModal">
+    </div>
+    <div class="z-50 fixed top-1/2 left-1/2 w-96 bg-white rounded-3xl text-center py-5 transform -translate-y-2/3 -translate-x-1/2">
+        <i class="fas fa-exclamation-circle text-5xl"></i>
+        <h1 class="font-bold text-xl my-4">Are you sure?</h1>
+        @if (Route::is('gallery'))
+            <form id="form_destroy" action="{{route('gallery.destroy')}}" method="POST">
+                @csrf
+                <input type="hidden" name="id" id="id_destroy">
+            </form>
+        @elseif (Route::is('news'))
+            <form id="form_destroy" action="{{route('news.destroy')}}" method="POST">
+                @csrf
+                <input type="hidden" name="id" id="id_destroy">
+            </form>
+        @else
+
+        @endif
+        <button class="bg-red-500 text-white px-6 rounded-xl" type="submit" form="form_destroy" value="Delete">Delete</button>
+        <button  @click="closeModal" class="bg-blue-500 text-white px-6 rounded-xl" type="button" form="form_destroy" value="Delete">Cancel</button>
+    </div>
+</div>
+
 </body>
 
 </html>
@@ -31,7 +55,11 @@
 
 {{-- RD Javascript --}}
 <script src="{{ asset('js/app.js') }}"></script>
-<script src="{{ asset('js/modal.js') }}"></script>
+@if (Route::is('gallery') || Route::is('news'))
+    <script src="{{ asset('js/modal.js') }}"></script>
+@else
+@endif
+{{-- <script src="{{ asset('js/modal.js') }}"></script> --}}
 <script src="{{ asset('js/myTinyMce.js') }}"></script>
 
 

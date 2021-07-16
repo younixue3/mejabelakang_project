@@ -39,10 +39,10 @@
                             <button class="h-10 w-10 mx-1 px-3 bg-yellow-500 hover:bg-yellow-600 text-white rounded-lg"><i
                                     class="fas fa-edit"></i></button>
                         </a>
-                        <a onclick="return confirm('Are you sure to delete it?');" href="{{route('gallery.destroy', $item->id)}}">
-                            <button
+                        <a href="#" @click="openModal" :data-target="{{$item->id}}">
+                            <button :data-target="{{$item->id}}"
                                 class="h-10 w-10 mx-1 px-3 bg-red-500 hover:bg-red-600 hover:bg-red-600 text-white rounded-lg"><i
-                                    class="fas fa-trash-alt"></i></button>
+                                :data-target="{{$item->id}}" class="fas fa-trash-alt"></i></button>
                         </a>
                     </div>
                 </div>

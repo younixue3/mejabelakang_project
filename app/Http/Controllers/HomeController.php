@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Http\Controllers\data\HomeController as DataController;
+
 class HomeController extends Controller
 {
     /**
@@ -16,6 +18,11 @@ class HomeController extends Controller
     //     $this->middleware('auth');
     // }
 
+    public function __construct(DataController $data)
+    {
+        $this->data = $data;
+    }
+
     /**
      * Show the application dashboard.
      *
@@ -23,6 +30,27 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+        $gallery = $this->data->get_data();
+        $gallery2nd = $this->data->get_second_data();
+
+        $data = compact('gallery', 'gallery2nd');
+
+        return view('welcome', $data);
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $news = $this->data->get_show_data($id);
+
+        $data = compact('news');
+
+        return view('page', $data);
+    }
+
 }
