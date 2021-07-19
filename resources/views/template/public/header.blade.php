@@ -14,18 +14,18 @@
 <body class="font-poppins" id="home">
     <!-- This example requires Tailwind CSS v2.0+ -->
     <div id="appJs">
-    <div class="fixed w-screen bg-white z-50">
+    <div class="fixed w-screen bg-transparent transition duration-300 z-50" id="navBar">
         <div>
             <div
-                class="flex justify-between items-center border-b-2 border-gray-100 md:justify-start px-5 py-5 sm:py-0 md:px-10 md:space-x-10">
+                class="flex justify-between items-center md:justify-start px-5 py-5 sm:py-0 md:px-10 md:space-x-10">
                 <div class="flex justify-start lg:w-0 lg:flex-1">
-                    <a href="#" class="font-bold text-xl text-gray-700">
-                        Meja Belakang
+                    <a href="#" class="font-bold text-xl text-white">
+                        <img class="w-20 md:w-32" src="{{ asset('img/logo.png') }}" alt="">
                     </a>
                 </div>
                 <div class="-mr-2 -my-2 md:hidden">
                     <button id="openMenu" type="button"
-                        class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                        class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
                         aria-expanded="false">
                         <span class="sr-only">Open menu</span>
                         <!-- Heroicon name: outline/menu -->
@@ -37,16 +37,16 @@
                     </button>
                 </div>
                 <nav class="hidden md:flex space-x-10">
-                    <a href="{{ Route::is('home') ? '#home' : '/' }}" id="nav1" class="text-base font-poppins font-medium py-5 {{ Route::is('home') ? 'border-b-4 border-gray-700' : '' }} text-gray-500 hover:text-gray-900" onclick="navBar()">
+                    <a href="{{ Route::is('home') ? '#home' : '/' }}" id="nav1" class="text-base font-poppins font-medium py-5 {{ Route::is('home') ? 'border-b-4 border-white' : '' }} text-white hover:text-gray-200" onclick="navBar()">
                         Home
                     </a>
-                    <a href="{{ Route::is('home') ? '#news' : '/' }}" id="nav2" class="text-base font-poppins font-medium py-5 {{ Route::is('news') || Route::is('page.news') ? 'border-b-4 border-gray-700' : '' }} text-gray-500 hover:text-gray-900" onclick="navBar()">
+                    <a href="{{ Route::is('home') ? '#news' : '/' }}" id="nav2" class="text-base font-poppins font-medium py-5 {{ Route::is('news') || Route::is('page.news') ? 'border-b-4 border-white' : '' }} text-white hover:text-gray-200" onclick="navBar()">
                         News
                     </a>
-                    <a href="{{ Route::is('home') ? '#about' : '/' }}" id="nav4" class="text-base font-poppins font-medium py-5 {{ Route::is('about') ? 'border-b-4 border-gray-700' : '' }} text-gray-500 hover:text-gray-900" onclick="navBar()">
+                    <a href="{{ Route::is('home') ? '#about' : '/' }}" id="nav4" class="text-base font-poppins font-medium py-5 {{ Route::is('about') ? 'border-b-4 border-white' : '' }} text-white hover:text-gray-200" onclick="navBar()">
                         About
                     </a>
-                    <a href="{{ Route::is('home') ? '#gallery' : '/' }}" id="nav3" class="text-base font-poppins font-medium py-5 {{ Route::is('gallery') || Route::is('page.gallery') ? 'border-b-4 border-gray-700' : '' }} text-gray-500 hover:text-gray-900" onclick="navBar()">
+                    <a href="{{ Route::is('home') ? '#gallery' : '/' }}" id="nav3" class="text-base font-poppins font-medium py-5 {{ Route::is('gallery') || Route::is('page.gallery') ? 'border-b-4 border-white' : '' }} text-white hover:text-gray-200" onclick="navBar()">
                         Gallery
                     </a>
                 </nav>
@@ -82,7 +82,7 @@
                         </div>
                         <div class="-mr-2">
                             <button id="closeMenu" type="button"
-                                class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                                class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                                 <span class="sr-only">Close menu</span>
                                 <!-- Heroicon name: outline/x -->
                                 <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -188,7 +188,7 @@
                             class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
                             Sign up
                         </a>
-                        <p class="mt-6 text-center text-base font-medium text-gray-500">
+                        <p class="mt-6 text-center text-base font-medium text-white">
                             Existing customer?
                             <a href="#" class="text-indigo-600 hover:text-indigo-500">
                                 Sign in

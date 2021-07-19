@@ -18,7 +18,7 @@ var app = new Vue({
         isHidden: 'hidden'
     },
     methods: {
-        openModal(event){
+        openModal(event) {
             var modals_rd = document.getElementById('modals_rd')
             if (modals_rd.classList.contains('hidden')) {
                 modals_rd.classList.remove('hidden')
@@ -29,7 +29,7 @@ var app = new Vue({
             var id = document.getElementById('id_destroy')
             id.value = event.target.dataset.target
         },
-        closeModal(){
+        closeModal() {
             // console.log('eek')
             var modals_rd = document.getElementById('modals_rd')
             modals_rd.classList.add('hidden')
@@ -37,7 +37,7 @@ var app = new Vue({
             id.value = null
         },
 
-        openImg(event){
+        openImg(event) {
             console.log(event.target.dataset.target)
             var modals_rd = document.getElementById('modals_rd')
             var modals_img = document.getElementById('image_modal')
@@ -50,14 +50,32 @@ var app = new Vue({
                 modals_rd.classList.add('hidden')
             }
         },
-        
-        closeImg(){
+
+        closeImg() {
             var modals_rd = document.getElementById('modals_rd')
             var modals_img = document.getElementById('image_modal')
             var link_gallery = document.getElementById('link_gallery')
+            var navBar = document.getElementById('navBar')
             modals_rd.classList.add('hidden')
             link_gallery.href = null
             modals_img.src = null
+        },
+        handleScroll(event) {
+            var navBar = document.getElementById('navBar')
+            console.log(window.scrollY)
+            if (window.scrollY > 250) {
+                navBar.classList.remove('bg-transparent')
+                navBar.classList.add('bg-gray-700')
+            } else {
+                navBar.classList.remove('bg-gray-700')
+                navBar.classList.add('bg-transparent')
+            }
         }
+    },
+    created() {
+        window.addEventListener('scroll', this.handleScroll);
+    },
+    destroyed() {
+        window.removeEventListener('scroll', this.handleScroll);
     }
 })

@@ -2,6 +2,15 @@
 @section('title', 'Home')
 @section('content')
 {{-- {{dd($gallery2nd)}} --}}
+<div class="flex">
+    <img class="h-screen w-full object-cover transform rotate-180" src="{{ asset('img/earth_planet_islands_215593_3840x2160.jpg') }}" alt="">
+    <div class="absolute top-32 px-10 flex">
+        <img class="w-1/2" src="{{ asset('img/2020_Senate_election_map.png') }}" alt="">
+        <p class="m-auto text-white font-medium">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa distinctio nam nulla exercitationem nobis? Provident recusandae quia repudiandae laudantium voluptatem necessitatibus reiciendis molestiae! Earum obcaecati modi quisquam adipisci doloremque suscipit? Lorem ipsum dolor sit amet consectetur adipisicing elit. At ex corporis earum minima officia ad! Consectetur impedit ullam necessitatibus voluptates unde. Asperiores fuga obcaecati similique. Libero facere odit soluta sint.
+        </p>
+    </div>
+</div>
 <div class="pl-0 sm:pl-1/6 font-poppins">
     <div class="border-gray-100 border-l-0 sm:border-l-2">
         @if ($news == null)

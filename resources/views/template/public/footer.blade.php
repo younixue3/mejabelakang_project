@@ -28,7 +28,7 @@
 <script src="{{ asset('js/app.js') }}"></script>
 <script src="{{ asset('js/index.js') }}"></script>
 <script src="{{ asset('js/carousel.js') }}"></script>
-<script src="{{ asset('js/modal.js') }}"></script>
+<script src="{{ asset('js/vue.js') }}"></script>
 
 {{-- JQuery --}}
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>

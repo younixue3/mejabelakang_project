@@ -1,5 +1,5 @@
 @include('template/public/header')
-<div class="pt-16">
+<div class="">
     @yield('content')
 </div>
 @include('template/public/footer')

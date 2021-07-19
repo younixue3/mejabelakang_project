@@ -56,7 +56,7 @@
 {{-- RD Javascript --}}
 <script src="{{ asset('js/app.js') }}"></script>
 @if (Route::is('gallery') || Route::is('news    '))
-    <script src="{{ asset('js/modal.js') }}"></script>
+    <script src="{{ asset('js/vue.js') }}"></script>
 @else
 @endif
 {{-- <script src="{{ asset('js/modal.js') }}"></script> --}}
