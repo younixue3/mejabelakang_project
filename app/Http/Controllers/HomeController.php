@@ -31,11 +31,10 @@ class HomeController extends Controller
     public function index()
     {
         $news = $this->data->get_data();
-        $news2nd = $this->data->get_second_data();
         $gallery = $this->data->get_gallery_data();
         $gallery2nd = $this->data->get_gallery2nd_data();
 
-        $data = compact('news', 'news2nd', 'gallery', 'gallery2nd');
+        $data = compact('news', 'gallery', 'gallery2nd');
 
         return view('welcome', $data);
     }

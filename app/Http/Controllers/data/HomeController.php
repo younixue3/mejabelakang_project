@@ -11,7 +11,7 @@ class HomeController extends Controller
 {
     public function get_data()
     {
-        $data = News::latest()->first();
+        $data = News::latest()->paginate(3);
         
         return $data;
     }
