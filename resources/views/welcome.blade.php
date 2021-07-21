@@ -35,7 +35,7 @@
                 </a>
                 @endforeach
             </div>
-            <a class="bg-gray-100 hover:bg-gray-200 font-medium px-5 py-2 rounded-xl" href="">More Publication</a>
+            <a class="bg-gray-100 hover:bg-gray-200 font-medium px-5 py-2 rounded-xl" href="{{route('publication.index')}}">More Publication</a>
         </div>
         @endif
         @if ($news == null)
@@ -61,7 +61,7 @@
                 </a>
                 @endforeach
             </div>
-            <a class="bg-gray-100 hover:bg-gray-200 font-medium px-5 py-2 rounded-xl" href="">More News</a>
+            <a class="bg-gray-100 hover:bg-gray-200 font-medium px-5 py-2 rounded-xl" href="{{route('news.index')}}">More News</a>
         </div>
         @endif
         <div class="block relative mt-20" id="gallery">

@@ -71,7 +71,13 @@ var app = new Vue({
         }
     },
     created() {
-        window.addEventListener('scroll', this.handleScroll);
+        var navBar = document.getElementById('navBar')
+        if (window.location.pathname == '/publication' || window.location.pathname == '/news') {
+            navBar.classList.remove('bg-transparent')
+            navBar.classList.add('bg-gray-700')
+        } else {
+            window.addEventListener('scroll', this.handleScroll);
+        }
     },
     destroyed() {
         window.removeEventListener('scroll', this.handleScroll);

@@ -40,10 +40,10 @@
                     <a href="{{ Route::is('home') ? '#home' : '/' }}" id="nav1" class="text-base font-poppins font-medium py-5 {{ Route::is('home') ? 'border-b-4 border-white' : '' }} text-white hover:text-gray-200" onclick="navBar()">
                         Home
                     </a>
-                    <a href="{{ Route::is('home') ? '#news' : '/' }}" id="nav2" class="text-base font-poppins font-medium py-5 {{ Route::is('news') || Route::is('page.news') ? 'border-b-4 border-white' : '' }} text-white hover:text-gray-200" onclick="navBar()">
+                    <a href="{{ Route::is('home') ? '#news' : '/' }}" id="nav2" class="text-base font-poppins font-medium py-5 {{ Route::is('news') || Route::is('page.news') || Route::is('news.index') ? 'border-b-4 border-white' : '' }} text-white hover:text-gray-200" onclick="navBar()">
                         News
                     </a>
-                    <a href="{{ Route::is('home') ? '#publication' : '/' }}" id="nav4" class="text-base font-poppins font-medium py-5 {{ Route::is('publication') || Route::is('page.publication') ? 'border-b-4 border-white' : '' }} text-white hover:text-gray-200" onclick="navBar()">
+                    <a href="{{ Route::is('home') ? '#publication' : '/' }}" id="nav4" class="text-base font-poppins font-medium py-5 {{ Route::is('publication') || Route::is('page.publication') || Route::is('publication.index') ? 'border-b-4 border-white' : '' }} text-white hover:text-gray-200" onclick="navBar()">
                         Publication
                     </a>
                     <a href="{{ Route::is('home') ? '#gallery' : '/' }}" id="nav3" class="text-base font-poppins font-medium py-5 {{ Route::is('gallery') || Route::is('page.gallery') ? 'border-b-4 border-white' : '' }} text-white hover:text-gray-200" onclick="navBar()">

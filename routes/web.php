@@ -9,6 +9,8 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\HeroController;
+use App\Http\Controllers\PublicationIndexController;
+use App\Http\Controllers\NewsIndexController;
 
 // use Auth;
 
@@ -33,6 +35,8 @@ Route::get('page/publication/{id}', [HomeController::class, 'showpublication'])-
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/publication', [PublicationIndexController::class, 'index'])->name('publication.index');
+Route::get('/news', [NewsIndexController::class, 'index'])->name('news.index');
 
 Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function() {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
