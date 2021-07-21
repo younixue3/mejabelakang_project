@@ -44,14 +44,24 @@
                             class="px-2.5 py-2 my-2.5 {{ Route::is('dashboard') ? 'bg-gray-200' : 'bg-white hover:bg-gray-200' }} rounded-xl overflow-hidden truncate">
                             <i class="fas fa-desktop mr-3"></i><span class="" id="dashboardItem">Dashboard</span></li>
                     </a>
+                    <a href="{{url('dashboard/hero')}}">
+                        <li
+                            class="px-2.5 py-2 my-2.5 {{ Route::is('hero') ? 'bg-gray-200' : 'bg-white hover:bg-gray-200' }} rounded-xl overflow-hidden truncate">
+                            <i class="fas fa-mountain mr-3"></i><span id="galleryItem">Hero</span></li>
+                    </a>
+                    <a href="{{url('dashboard/publication')}}">
+                        <li
+                            class="px-2.5 py-2 my-2.5 {{ Route::is('publication') || Route::is('publication.add') || Route::is('publication.edit') ? 'bg-gray-200' : 'bg-white hover:bg-gray-200' }} rounded-xl overflow-hidden truncate">
+                            <i class="fas fa-camera-retro mr-3"></i><span id="galleryItem">Publication</span></li>
+                    </a>
                     <a href="{{url('dashboard/news')}}">
                         <li
-                            class="px-2.5 py-2 my-2.5 {{ Route::is('news') || Route::is('news.add')  ? 'bg-gray-200' : 'bg-white hover:bg-gray-200' }} rounded-xl overflow-hidden truncate">
+                            class="px-2.5 py-2 my-2.5 {{ Route::is('news') || Route::is('news.add') || Route::is('news.edit') ? 'bg-gray-200' : 'bg-white hover:bg-gray-200' }} rounded-xl overflow-hidden truncate">
                             <i class="fas fa-newspaper mr-3"></i><span id="newsItem">News</span></li>
                     </a>
                     <a href="{{url('dashboard/gallery')}}">
                         <li
-                            class="px-2.5 py-2 my-2.5 {{ Route::is('gallery') || Route::is('gallery.add') ? 'bg-gray-200' : 'bg-white hover:bg-gray-200' }} rounded-xl overflow-hidden truncate">
+                            class="px-2.5 py-2 my-2.5 {{ Route::is('gallery') || Route::is('gallery.add') || Route::is('gallery.edit') ? 'bg-gray-200' : 'bg-white hover:bg-gray-200' }} rounded-xl overflow-hidden truncate">
                             <i class="fas fa-images mr-3"></i><span id="galleryItem">Gallery</span></li>
                     </a>
                 </ul>

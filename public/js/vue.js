@@ -14,11 +14,9 @@
 
 var app = new Vue({
     el: '#appJs',
-    data: {
-        isHidden: 'hidden'
-    },
     methods: {
         openModal(event) {
+            console.log('eek')
             var modals_rd = document.getElementById('modals_rd')
             if (modals_rd.classList.contains('hidden')) {
                 modals_rd.classList.remove('hidden')
@@ -63,7 +61,7 @@ var app = new Vue({
         handleScroll(event) {
             var navBar = document.getElementById('navBar')
             console.log(window.scrollY)
-            if (window.scrollY > 250) {
+            if (window.scrollY > 180) {
                 navBar.classList.remove('bg-transparent')
                 navBar.classList.add('bg-gray-700')
             } else {

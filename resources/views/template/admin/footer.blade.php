@@ -34,6 +34,11 @@
                 @csrf
                 <input type="hidden" name="id" id="id_destroy">
             </form>
+        @elseif (Route::is('publication'))
+            <form id="form_destroy" action="{{route('publication.destroy')}}" method="POST">
+                @csrf
+                <input type="hidden" name="id" id="id_destroy">
+            </form>
         @else
 
         @endif
@@ -55,7 +60,7 @@
 
 {{-- RD Javascript --}}
 <script src="{{ asset('js/app.js') }}"></script>
-@if (Route::is('gallery') || Route::is('news    '))
+@if (Route::is('gallery') || Route::is('news') || Route::is('publication'))
     <script src="{{ asset('js/vue.js') }}"></script>
 @else
 @endif

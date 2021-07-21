@@ -7,6 +7,8 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\PublicationController;
+use App\Http\Controllers\HeroController;
 
 // use Auth;
 
@@ -27,6 +29,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 // News Page
 Route::get('page/news/{id}', [HomeController::class, 'show'])->name('page.news');
 Route::get('page/gallery/{id}', [HomeController::class, 'showgallery'])->name('page.gallery');
+Route::get('page/publication/{id}', [HomeController::class, 'showpublication'])->name('page.publication');
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
@@ -47,6 +50,17 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function() {
     Route::post('/gallery/destroy', [GalleryController::class, 'destroy'])->name('gallery.destroy');
     Route::post('/gallery/store', [GalleryController::class, 'store'])->name('gallery.store');
     Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
+    // Publication
+    Route::get('/publication/add', [PublicationController::class, 'create'])->name('publication.add');
+    Route::get('/publication/edit/{id}', [PublicationController::class, 'edit'])->name('publication.edit');
+    Route::put('/publication/update/{id}', [PublicationController::class, 'update'])->name('publication.update');
+    Route::post('/publication/destroy', [PublicationController::class, 'destroy'])->name('publication.destroy');
+    Route::post('/publication/store', [PublicationController::class, 'store'])->name('publication.store');
+    Route::get('/publication', [PublicationController::class, 'index'])->name('publication');
+    // Hero
+    Route::post('/hero/destroy', [HeroController::class, 'destroy'])->name('hero.destroy');
+    Route::post('/hero/store', [HeroController::class, 'store'])->name('hero.store');
+    Route::get('/hero', [HeroController::class, 'index'])->name('hero');
 });
 // Route::get("/logout", function() {
 Route::get('/logout', function() {

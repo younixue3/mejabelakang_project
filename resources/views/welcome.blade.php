@@ -5,22 +5,22 @@
 <div class="flex">
     <img class="h-screen w-full object-cover transform rotate-180" src="{{ asset('img/earth_planet_islands_215593_3840x2160.jpg') }}" alt="">
     <div class="absolute top-32 px-10 md:flex overflow-hidden">
-        <img class="w-full md:w-1/2" src="{{ asset('img/2020_Senate_election_map.png') }}" alt="">
-        <p class="m-auto text-white font-medium overflow-hidden h-60 md:h-auto">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa distinctio nam nulla exercitationem nobis? Provident recusandae quia repudiandae laudantium voluptatem necessitatibus reiciendis molestiae! Earum obcaecati modi quisquam adipisci doloremque suscipit? Lorem ipsum dolor sit amet consectetur adipisicing elit. At ex corporis earum minima officia ad! Consectetur impedit ullam necessitatibus voluptates unde. Asperiores fuga obcaecati similique. Libero facere odit soluta sint.
-        </p>
+        <img class="w-full md:w-1/2" src="{{ asset('Upload/image_content/'.$hero->image_content) }}" alt="">
+        <div class="m-auto text-white font-medium overflow-hidden h-60 md:h-auto">
+            {!!$hero->desc!!}
+        </div>
     </div>
 </div>
 <div class="pl-0 sm:pl-1/6 font-poppins">
     <div class="border-gray-100 border-l-0 sm:border-l-2">
-        @if ($news == null)
+        @if ($publication == null)
         <div class="w-full md:w-3/4 p-5 text-center self-center text-4xl font-bold ">Data Kosong</div>
         @else
         <div class="p-5 text-center" id="publication">
             <h1 class="text-4xl font-bold text-gray-800 my-10 -ml-6 text-left">Publication</h1>
-            <div class="grid grid-cols-3 gap-x-4 gap-y-10 mb-10">
-                @foreach ($news as $item)
-                <a href="{{route('page.news', $item->id)}}">
+            <div class="grid grid-cols-3 gap-y-10 mb-10">
+                @foreach ($publication as $item)
+                <a href="{{route('page.publication', $item->id)}}">
                     <div
                         class="cursor-pointer transform transition duration-500 ease-in-out scale-95 hover:scale-100 bg-white rounded-xl shadow-md hover:shadow-xl flex">
                         <img class="h-48 w-60 object-cover rounded-l-xl"
@@ -37,6 +37,10 @@
             </div>
             <a class="bg-gray-100 hover:bg-gray-200 font-medium px-5 py-2 rounded-xl" href="">More Publication</a>
         </div>
+        @endif
+        @if ($news == null)
+        <div class="w-full md:w-3/4 p-5 text-center self-center text-4xl font-bold ">Data Kosong</div>
+        @else
         <div class="p-5 text-center" id="news">
             <h1 class="text-4xl font-bold text-gray-800 my-10 -ml-6 text-left">News</h1>
             <div class="grid grid-cols-4 gap-x-4 gap-y-10 mb-10">

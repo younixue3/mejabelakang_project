@@ -1,22 +1,22 @@
 @extends('template/admin/master')
-@section('title', 'Gallery')
+@section('title', 'Publication')
 @section('content')
 <header class="bg-white shadow">
     <div class="max-w-7xl px-12 py-8">
         <h1 class="text-3xl font-bold text-gray-900">
-            Gallery
+            Publication
         </h1>
     </div>
 </header>
 <main>
     <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
         <!-- Replace with your content -->
-        <a href="{{route('gallery.add')}}">
+        <a href="{{route('publication.add')}}">
             <button class="h-10 w-20 float-right bg-green-500 hover:bg-green-600 text-white text-center rounded-lg"><i
                     class="fas fa-plus mr-2"></i>Add</button>
         </a>
         <div class="grid grid-rows-5 gap-y-5 px-4 py-6 sm:px-0 mt-10">
-            @foreach ($gallery as $item)
+            @foreach ($publication as $item)
                 <div class="bg-white shadow-xl rounded-3xl p-3 md:flex">
                     <img class="w-96 h-64 object-cover rounded-2xl"
                         src="{{ asset('Upload/image_content/'.$item->image_content) }}"
@@ -35,7 +35,7 @@
                         </div>
                     </div>
                     <div class="flex items-start py-3">
-                        <a href="{{route('gallery.edit', $item->id)}}">
+                        <a href="{{route('publication.edit', $item->id)}}">
                             <button class="h-10 w-10 mx-1 px-3 bg-yellow-500 hover:bg-yellow-600 text-white rounded-lg"><i
                                     class="fas fa-edit"></i></button>
                         </a>
@@ -47,7 +47,7 @@
                     </div>
                 </div>
             @endforeach
-            {{$gallery->links()}}
+            {{$publication->links()}}
         </div>
         <!-- /End replace -->
     </div>

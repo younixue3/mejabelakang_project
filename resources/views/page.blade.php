@@ -1,8 +1,8 @@
 @extends('template/public/master')
 @section('title', 'Page')
 @section('content')
-<div class="pl-0 sm:pl-1/6 font-poppins">
-    <div class="border-gray-100 border-l-0 sm:border-l-2">
+<div class="font-poppins">
+    <div class="">
         <div class="pb-10 h-rd120 relative">
             <img class="h-rd120 w-screen object-cover" src="{{ asset('Upload/image_content/'.$data->image_content) }}" alt="">
             <div class="absolute w-full bottom-0 bg-gradient-to-t z-10 px-5 md:px-20 py-20 from-blue-600 text-white">

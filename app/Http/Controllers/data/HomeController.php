@@ -6,12 +6,28 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\News;
 use App\Models\Gallery;
+use App\Models\Publication;
+use App\Models\Hero;
 
 class HomeController extends Controller
 {
+    public function get_hero()
+    {
+        $data = Hero::latest()->first();
+
+        return $data;
+    }
+
+    public function get_publication()
+    {
+        $data = Publication::latest()->paginate(3);
+
+        return $data;
+    }
+
     public function get_data()
     {
-        $data = News::latest()->paginate(3);
+        $data = News::latest()->paginate(4);
         
         return $data;
     }
@@ -46,6 +62,12 @@ class HomeController extends Controller
     public function get_showgallery_data($id)
     {
         $data = Gallery::findOrFail($id);
+        return $data;
+    }
+    
+    public function get_showpublication_data($id)
+    {
+        $data = Publication::findOrFail($id);
         return $data;
     }
 }

@@ -1,29 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\public;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
-use App\Models\User;
-
-use App\Http\Controllers\data\NewsController as DataController;
 
 class NewsController extends Controller
 {
-
-    public function __construct(DataController $data)
-    {
-        $this->data = $data;
-    }
-    
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $news = $this->data->get_data();
-        $user = User::get();
-
-        $data = compact('news', 'user');
-
-        return view('dashboard.news', $data);
+        //
     }
 
     /**
@@ -33,7 +24,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        return view('dashboard.data.news.add');
+        //
     }
 
     /**
@@ -44,10 +35,7 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        if ($this->data->store_data($request)) {
-            return redirect()->route('news')->with('success', 'sukses');
-        }
-        return redirect()->back()->with('error', 'gagal');
+        //
     }
 
     /**
@@ -69,11 +57,7 @@ class NewsController extends Controller
      */
     public function edit($id)
     {
-        $news = $this->data->get_edit_data($id);
-
-        $data = compact('news');
-
-        return view('dashboard.data.news.edit', $data);
+        //
     }
 
     /**
@@ -85,10 +69,7 @@ class NewsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if ($this->data->update_data($request, $id)) {
-            return redirect()->route('news')->with('success', 'sukses');
-        }
-        return redirect()->back()->with('error', 'gagal');
+        //
     }
 
     /**
@@ -97,11 +78,8 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-        if ($this->data->destroy_data($request)) {
-            return redirect()->route('news')->with('success', 'sukses');
-        }
-        return redirect()->back()->with('error', 'gagal');
+        //
     }
 }

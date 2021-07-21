@@ -4,26 +4,27 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\User;
+use App\Http\Controllers\data\HeroController as DataController;
 
-use App\Http\Controllers\data\GalleryController as DataController;
-
-class GalleryController extends Controller
+class HeroController extends Controller
 {
-
     public function __construct(DataController $data)
     {
         $this->data = $data;
     }
-    
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $gallery = $this->data->get_data();
-        $user = User::get();
+        $hero = $this->data->get_data();
 
-        $data = compact('gallery', 'user');
+        $data = compact('hero');
 
-        return view('dashboard.gallery', $data);
+        return view('dashboard.hero', $data);
     }
 
     /**
@@ -33,7 +34,7 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        return view('dashboard.data.gallery.add');
+        //
     }
 
     /**
@@ -44,9 +45,8 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
         if ($this->data->store_data($request)) {
-            return redirect()->route('gallery')->with('success', 'sukses');
+            return redirect()->route('hero')->with('success', 'sukses');
         }
         return redirect()->back()->with('error', 'gagal');
     }
@@ -70,11 +70,7 @@ class GalleryController extends Controller
      */
     public function edit($id)
     {
-        $gallery = $this->data->get_edit_data($id);
-
-        $data = compact('gallery');
-
-        return view('dashboard.data.gallery.edit', $data);
+        //
     }
 
     /**
@@ -86,10 +82,7 @@ class GalleryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if ($this->data->update_data($request, $id)) {
-            return redirect()->route('gallery')->with('success', 'sukses');
-        }
-        return redirect()->back()->with('error', 'gagal');
+        //
     }
 
     /**
@@ -98,11 +91,8 @@ class GalleryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-        if ($this->data->destroy_data($request)) {
-            return redirect()->route('gallery')->with('success', 'sukses');
-        }
-        return redirect()->back()->with('error', 'gagal');
+        //
     }
 }

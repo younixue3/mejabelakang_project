@@ -30,11 +30,13 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $hero = $this->data->get_hero();
         $news = $this->data->get_data();
+        $publication = $this->data->get_publication();
         $gallery = $this->data->get_gallery_data();
         $gallery2nd = $this->data->get_gallery2nd_data();
 
-        $data = compact('news', 'gallery', 'gallery2nd');
+        $data = compact('news', 'gallery', 'gallery2nd', 'hero', 'publication');
 
         return view('welcome', $data);
     }
@@ -63,4 +65,12 @@ class HomeController extends Controller
         return view('page', $data);
     }
 
+    public function showpublication($id)
+    {
+        $data = $this->data->get_showpublication_data($id);
+
+        $data = compact('data');
+
+        return view('page', $data);
+    }
 }

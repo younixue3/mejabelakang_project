@@ -4,32 +4,31 @@
 <header class="bg-white shadow">
   <div class="max-w-7xl px-12 py-8">
       <h1 class="text-3xl font-bold text-gray-900">
-        News
+        Publication
       </h1>
   </div>
 </header>
 <main>
-    <form class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8" action="{{route('news.update', $news->id)}}" method="POST" enctype="multipart/form-data">
+    <form class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8" action="{{route('publication.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
-        @method('PUT')
         <div class="bg-white shadow-xl p-10 grid gap-y-3">
             <label>
                 <div class="font-semibold">
                     Judul
                 </div>
-                <input class="px-2.5 py-1 w-1/2 border-2 text-lg focus:outline-none rounded-xl" type="text" id="title" name="title" value="{{$news->title}}">
+                <input class="px-2.5 py-1 w-1/2 border-2 text-lg focus:outline-none rounded-xl" type="text" id="title" name="title">
             </label>
             <label>
                 <div class="font-semibold">
                     Sub Content
                 </div>
-                <textarea id="tinymcesub" id="subcontent" name="sub_content" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit dolor consectetur aspernatur consequuntur sequi vero, eius, incidunt provident non laudantium sed recusandae ratione placeat nesciunt repudiandae temporibus ipsam natus fuga?">{{$news->sub_content}}</textarea>
+                <textarea id="tinymcesub" id="subcontent" name="sub_content" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit dolor consectetur aspernatur consequuntur sequi vero, eius, incidunt provident non laudantium sed recusandae ratione placeat nesciunt repudiandae temporibus ipsam natus fuga?"></textarea>
             </label>
             <label>
                 <div class="font-semibold">
                     Isi Konten
                 </div>
-                <textarea id="tinymce" id="content" name="content" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit dolor consectetur aspernatur consequuntur sequi vero, eius, incidunt provident non laudantium sed recusandae ratione placeat nesciunt repudiandae temporibus ipsam natus fuga?">{{$news->content}}</textarea>
+                <textarea id="tinymce" id="content" name="content" placeholder="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit dolor consectetur aspernatur consequuntur sequi vero, eius, incidunt provident non laudantium sed recusandae ratione placeat nesciunt repudiandae temporibus ipsam natus fuga?"></textarea>
             </label>
             <label>
                 <div class="font-semibold">

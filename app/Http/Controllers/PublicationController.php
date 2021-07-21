@@ -6,24 +6,28 @@ use Illuminate\Http\Request;
 
 use App\Models\User;
 
-use App\Http\Controllers\data\GalleryController as DataController;
+use App\Http\Controllers\data\PublicationController as DataController;
 
-class GalleryController extends Controller
+class PublicationController extends Controller
 {
 
     public function __construct(DataController $data)
     {
         $this->data = $data;
     }
-    
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $gallery = $this->data->get_data();
+        $publication = $this->data->get_data();
         $user = User::get();
+        $data = compact('publication', 'user');
 
-        $data = compact('gallery', 'user');
-
-        return view('dashboard.gallery', $data);
+        return view('dashboard.publication', $data);
     }
 
     /**
@@ -33,7 +37,7 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        return view('dashboard.data.gallery.add');
+        return view('dashboard.data.publication.add');
     }
 
     /**
@@ -44,9 +48,8 @@ class GalleryController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
         if ($this->data->store_data($request)) {
-            return redirect()->route('gallery')->with('success', 'sukses');
+            return redirect()->route('publication')->with('success', 'sukses');
         }
         return redirect()->back()->with('error', 'gagal');
     }
@@ -70,11 +73,11 @@ class GalleryController extends Controller
      */
     public function edit($id)
     {
-        $gallery = $this->data->get_edit_data($id);
+        $publication = $this->data->get_edit_data($id);
 
-        $data = compact('gallery');
+        $data = compact('publication');
 
-        return view('dashboard.data.gallery.edit', $data);
+        return view('dashboard.data.publication.edit', $data);
     }
 
     /**
@@ -87,7 +90,7 @@ class GalleryController extends Controller
     public function update(Request $request, $id)
     {
         if ($this->data->update_data($request, $id)) {
-            return redirect()->route('gallery')->with('success', 'sukses');
+            return redirect()->route('publication')->with('success', 'sukses');
         }
         return redirect()->back()->with('error', 'gagal');
     }
@@ -101,7 +104,7 @@ class GalleryController extends Controller
     public function destroy(Request $request)
     {
         if ($this->data->destroy_data($request)) {
-            return redirect()->route('gallery')->with('success', 'sukses');
+            return redirect()->route('publication')->with('success', 'sukses');
         }
         return redirect()->back()->with('error', 'gagal');
     }
