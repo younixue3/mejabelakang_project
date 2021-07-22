@@ -18,7 +18,7 @@
                 <div class="w-full md:w-3/4 text-center self-center text-4xl font-bold ">Data Kosong</div>
             @else
             <div class="w-full md:w-3/4 mr-5 grid grid-cols-1 grid-rows-4 md:grid-cols-2 md:grid-rows-3 gap-3 truncate pb-10">
-                <div class="shadow-xl row-span-3 rounded-2xl h-full w-full flex relative">
+                <div class="bg-gray-100 shadow-xl row-span-3 rounded-2xl h-full w-full flex relative">
                     <img class="rounded-2xl h-96 object-cover" src="{{ asset('Upload/image_content/'.$news->image_content) }}" alt="">
                     <div class="absolute bg-gradient-to-t bottom-0 z-10 px-5 h-full w-full from-gray-800 text-white rounded-2xl">
                         <div class="m-auto pt-1/6">
@@ -31,7 +31,7 @@
                 </div>
                 
                 @foreach ($news2nd as $item)
-                    <div class="shadow-xl rounded-3xl p-3 flex">
+                    <div class="bg-gray-100 shadow-xl rounded-3xl p-3 flex">
                         <img class="w-40 object-cover rounded-2xl" src="{{ asset('Upload/image_content/'.$item->image_content) }}" alt="">
                         <div class="ml-2 m-2">
                             <h1 class="text-base font-bold truncate">{{$item->title}}</h1>
@@ -44,7 +44,7 @@
             </div>
             @endif
             <div class="w-full md:w-1/4 ml-0 md:ml-5">
-                <div class="shadow-xl p-5 pt-8 rounded-2xl">
+                <div class="bg-gray-100 shadow-xl p-5 pt-8 rounded-2xl">
                     <h1 class="font-bold text-xl">Statistic</h1>
                     <div class="pt-8">
                         <span class="px-2 mx-2 border-b-4 border-blue-600">

@@ -17,7 +17,7 @@
         </a>
         <div class="grid grid-rows-5 gap-y-5 px-4 py-6 sm:px-0 mt-10">
             @foreach ($gallery as $item)
-                <div class="bg-white shadow-xl rounded-3xl p-3 md:flex">
+                <div class="bg-gray-100 shadow-xl rounded-3xl p-3 md:flex">
                     <img class="w-96 h-64 object-cover rounded-2xl"
                         src="{{ asset('Upload/image_content/'.$item->image_content) }}"
                         alt="">

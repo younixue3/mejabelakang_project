@@ -6,6 +6,7 @@
     <div class="absolute top-32 px-10 md:flex overflow-hidden">
         <img class="w-full md:w-1/2" src="{{ asset('Upload/image_content/'.$hero->image_content) }}" alt="">
         <div class="m-auto text-white font-medium text-sm h-60 md:h-auto">
+            <h1 class="text-6xl text-right mb-10 mr-6">About Us</h1>
             {!!$hero->desc!!}
         </div>
     </div>
@@ -16,12 +17,12 @@
         <div class="w-full md:w-3/4 p-5 text-center self-center text-4xl font-bold ">Data Kosong</div>
         @else
         <div class="p-5 text-center" id="publication">
-            <h1 class="text-4xl font-bold text-gray-800 my-10 -ml-6 text-left">Publication</h1>
+            <h1 class="text-4xl font-bold text-gray-800 my-10 -ml-6 text-left">About Us</h1>
             <div class="grid grid-row-6 gap-y-10 mb-10">
                 @foreach ($publication as $item)
                 <a href="{{route('page.publication', $item->id)}}">
                     <div
-                        class="cursor-pointer transform transition duration-500 ease-in-out scale-95 hover:scale-100 bg-white rounded-xl shadow-md hover:shadow-xl flex">
+                        class="cursor-pointer transform transition duration-500 ease-in-out scale-95 hover:scale-100 bg-gray-100 rounded-xl shadow-md hover:shadow-xl flex">
                         <img class="h-72 w-full object-cover rounded-l-xl"
                             src="{{ asset('Upload/image_content/'.$item->image_content) }}" alt="">
                         <div class="p-2 pt-1 text-right">

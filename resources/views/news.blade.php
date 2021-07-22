@@ -8,7 +8,7 @@
         <div class="w-full md:w-3/4 p-5 text-center self-center text-4xl font-bold ">Data Kosong</div>
         @else
         <div class="p-5 text-center" id="publication">
-            <h1 class="text-4xl font-bold text-gray-800 my-10 -ml-6 text-left">News</h1>
+            <h1 class="text-4xl font-bold text-gray-800 my-10 -ml-6 text-left">Publication</h1>
             <div class="grid grid-row-6 gap-y-10 mb-10">
                 @foreach ($news as $item)
                 <a href="{{route('page.news', $item->id)}}">
