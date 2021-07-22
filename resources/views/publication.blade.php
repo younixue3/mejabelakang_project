@@ -1,7 +1,15 @@
 @extends('template/public/master')
 @section('title', 'Home')
 @section('content')
-{{-- {{dd($gallery2nd)}} --}}
+<div class="flex">
+    <img class="h-screen w-full object-cover transform rotate-180" src="{{ asset('img/earth_planet_islands_215593_3840x2160.jpg') }}" alt="">
+    <div class="absolute top-32 px-10 md:flex overflow-hidden">
+        <img class="w-full md:w-1/2" src="{{ asset('Upload/image_content/'.$hero->image_content) }}" alt="">
+        <div class="m-auto text-white font-medium text-sm h-60 md:h-auto">
+            {!!$hero->desc!!}
+        </div>
+    </div>
+</div>
 <div class="pl-0 sm:pl-1/6 font-poppins pt-5">
     <div class="border-gray-100 border-l-0 sm:border-l-2">
         @if ($publication == null)

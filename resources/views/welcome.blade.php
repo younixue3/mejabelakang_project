@@ -6,8 +6,11 @@
     <img class="h-screen w-full object-cover transform rotate-180" src="{{ asset('img/earth_planet_islands_215593_3840x2160.jpg') }}" alt="">
     <div class="absolute top-32 px-10 md:flex overflow-hidden">
         <img class="w-full md:w-1/2" src="{{ asset('Upload/image_content/'.$hero->image_content) }}" alt="">
-        <div class="m-auto text-white font-medium overflow-hidden h-60 md:h-auto">
+        <div class="m-auto text-white font-medium text-sm h-60 md:h-auto">
             {!!$hero->desc!!}
+            <div class="mt-5 float-right mr-10">
+                <a class="text-white hover:text-gray-300 px-3 py-1 text-xl font-medium rounded-xl" href="{{route('publication.index')}}">More About Us</a>
+            </div>
         </div>
     </div>
 </div>
@@ -17,7 +20,7 @@
         <div class="w-full md:w-3/4 p-5 text-center self-center text-4xl font-bold ">Data Kosong</div>
         @else
         <div class="p-5 text-center" id="publication">
-            <h1 class="text-4xl font-bold text-gray-800 my-10 -ml-6 text-left">Publication</h1>
+            <h1 class="text-4xl font-bold text-gray-800 my-10 -ml-6 text-left">About</h1>
             <div class="grid grid-cols-3 gap-y-10 mb-10">
                 @foreach ($publication as $item)
                 <a href="{{route('page.publication', $item->id)}}">
@@ -35,7 +38,7 @@
                 </a>
                 @endforeach
             </div>
-            <a class="bg-gray-100 hover:bg-gray-200 font-medium px-5 py-2 rounded-xl" href="{{route('publication.index')}}">More Publication</a>
+            <a class="bg-gray-100 hover:bg-gray-200 font-medium px-5 py-2 rounded-xl" href="{{route('publication.index')}}">More About Us</a>
         </div>
         @endif
         @if ($news == null)

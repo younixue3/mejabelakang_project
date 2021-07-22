@@ -8,9 +8,17 @@ use Illuminate\Http\Request;
 use Illuminate\Http\File;
 use Auth, Str, Storage;
 use App\Models\Publication;
+use App\Models\Hero;
 
 class PublicationController extends Controller
 {
+    public function get_hero_data()
+    {
+        $data = Hero::latest()->first();
+        
+        return $data;
+    }
+
     public function get_data()
     {
         $data = Publication::latest()->paginate(6);

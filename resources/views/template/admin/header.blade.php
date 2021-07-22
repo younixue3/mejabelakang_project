@@ -23,8 +23,7 @@
     <div class="flex w-full h-full">
         <div id="mobile-menu" class="h-full md:h-auto z-50 w-0 fixed md:w-80 duration-300 hover:w-80 bg-white rounded shadow-md md:block md:static overflow-hidden md:overflow-none">
             <div class="font-bold text-xl h-16 pl-5 pr-2 md:pr-0 overflow-hidden truncate flex">
-                <img class="h-10 w-10 m-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-                    alt="Workflow" /></span>
+                <img class="h-10 w-10 m-auto" src="{{ asset('img/logo.png') }}" alt="">
                 <span class="ml-4 m-auto">
                     Meja Belakang
                 </span>
@@ -52,12 +51,12 @@
                     <a href="{{url('dashboard/publication')}}">
                         <li
                             class="px-2.5 py-2 my-2.5 {{ Route::is('publication') || Route::is('publication.add') || Route::is('publication.edit') ? 'bg-gray-200' : 'bg-white hover:bg-gray-200' }} rounded-xl overflow-hidden truncate">
-                            <i class="fas fa-camera-retro mr-3"></i><span id="galleryItem">Publication</span></li>
+                            <i class="fas fa-camera-retro mr-3"></i><span id="galleryItem">About Us</span></li>
                     </a>
                     <a href="{{url('dashboard/news')}}">
                         <li
                             class="px-2.5 py-2 my-2.5 {{ Route::is('news') || Route::is('news.add') || Route::is('news.edit') ? 'bg-gray-200' : 'bg-white hover:bg-gray-200' }} rounded-xl overflow-hidden truncate">
-                            <i class="fas fa-newspaper mr-3"></i><span id="newsItem">News</span></li>
+                            <i class="fas fa-newspaper mr-3"></i><span id="newsItem">Publication</span></li>
                     </a>
                     <a href="{{url('dashboard/gallery')}}">
                         <li

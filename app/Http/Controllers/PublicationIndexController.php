@@ -21,8 +21,9 @@ class PublicationIndexController extends Controller
      */
     public function index()
     {
+        $hero = $this->data->get_hero_data();
         $publication = $this->data->get_data();
-        $data = compact('publication');
+        $data = compact('publication', 'hero');
         return view('publication', $data);
     }
 

@@ -1,6 +1,6 @@
         <div class="z-10 bg-gray-700 p-2 md:p-11 text-white text-left font-poppins">
                 <div class="md:float-left">
-                    <span class=" mr-1">Made with by ricko.tiaka</span>
+                    <span class="text-sm mr-1">Made with by ricko.tiaka</span>
                 </div>
                 <div class="md:float-right mx-auto md:mx-0">
                     <button>
