@@ -1,13 +1,16 @@
-var openMenu = document.getElementById('openMenu');
-var clsoeMenu = document.getElementById('closeMenu');
-var menuBar = document.getElementById('menuBar');
+// var openMenu = document.getElementById('openMenu');
+// var clsoeMenu = document.getElementById('closeMenu');
 
-openMenu.onclick = function () { 
+function openMenu() { 
+    var menuBar = document.getElementById('menuBar');
     menuBar.classList.remove('hidden');
+    // console.log('eek')
 }
 
-closeMenu.onclick = function () { 
+function closeMenu() { 
+    var menuBar = document.getElementById('menuBar');
     menuBar.classList.add('hidden');
+    // console.log('eek')
 }
 
 function navBar(event) { 

@@ -6,7 +6,7 @@
     <div class="absolute top-32 px-10 md:flex overflow-hidden">
         <img class="w-full md:w-1/2" src="{{ asset('Upload/image_content/'.$hero->image_content) }}" alt="">
         <div class="m-auto text-white font-medium text-sm h-60 md:h-auto">
-            <h1 class="text-6xl text-right mb-10 mr-6">About Us</h1>
+            <h1 class="text-5xl md:text-6xl text-center md:text-right mb-10 mr-0 mb:mr-6">About Us</h1>
             {!!$hero->desc!!}
         </div>
     </div>

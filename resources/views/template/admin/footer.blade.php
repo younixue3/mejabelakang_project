@@ -15,8 +15,6 @@
             <img class="w-7 h-7 mx-1" src="https://img.icons8.com/material-outlined/480/ffffff/globe--v2.png" />
         </button>
     </div>
-{{-- </div> --}}
-{{-- </template> --}}
 </div>
 <div id="modals_rd" class="hidden">
     <div class="fixed top-0 z-50 h-full w-full bg-black opacity-20" @click="closeModal">

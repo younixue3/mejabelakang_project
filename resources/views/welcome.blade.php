@@ -5,6 +5,11 @@
 <div class="flex">
     <img class="h-screen w-full object-cover transform rotate-180" src="{{ asset('img/earth_planet_islands_215593_3840x2160.jpg') }}" alt="">
     <div class="absolute top-32 px-10 md:flex overflow-hidden">
+        @if ($hero == null)
+        <div class="bg-white text-center text-xl">
+            Data Kosong
+        </div>
+        @else     
         <img class="w-full md:w-1/2" src="{{ asset('Upload/image_content/'.$hero->image_content) }}" alt="">
         <div class="m-auto text-white font-medium text-sm h-60 md:h-auto">
             {!!$hero->desc!!}
@@ -12,25 +17,26 @@
                 <a class="text-white hover:text-gray-300 px-3 py-1 text-xl font-medium rounded-xl" href="{{route('publication.index')}}">More About Us</a>
             </div>
         </div>
+        @endif
     </div>
 </div>
-<div class="pl-0 sm:pl-1/6 font-poppins">
+<div class="pl-0 sm:pl-10 font-poppins">
     <div class="border-gray-100 border-l-0 sm:border-l-2">
         @if ($publication == null)
         <div class="w-full md:w-3/4 p-5 text-center self-center text-4xl font-bold ">Data Kosong</div>
         @else
         <div class="p-5 text-center" id="publication">
             <h1 class="text-4xl font-bold text-gray-800 my-10 -ml-6 text-left">About</h1>
-            <div class="grid grid-cols-3 gap-y-10 mb-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-y-10 mb-10">
                 @foreach ($publication as $item)
                 <a href="{{route('page.publication', $item->id)}}">
                     <div
-                        class="cursor-pointer transform transition duration-500 ease-in-out scale-95 hover:scale-100 bg-gray-100 rounded-xl shadow-md hover:shadow-xl flex">
-                        <img class="h-48 w-60 object-cover rounded-l-xl"
+                        class="cursor-pointer transform transition duration-500 ease-in-out scale-95 hover:scale-100 bg-gray-100 rounded-xl shadow-md hover:shadow-xl xl:flex">
+                        <img class="h-48 w-full xl:w-60 object-cover xl:rounded-l-xl rounded-t-xl"
                             src="{{ asset('Upload/image_content/'.$item->image_content) }}" alt="">
                         <div class="p-2 pt-1 text-right">
                             <span class="font-light text-xs">{{$item->created_at->format('d F , Y')}}</span>
-                            <div class="px-2 text-left font-normal text-sm h-36 overflow-hidden">
+                            <div class="px-2 text-left font-normal text-sm h-36 lg:w-full overflow-hidden">
                                 <h1 class="text-lg">{{$item->title}}</h1>
                             </div>
                         </div>
@@ -46,7 +52,7 @@
         @else
         <div class="p-5 text-center" id="news">
             <h1 class="text-4xl font-bold text-gray-800 my-10 -ml-6 text-left">Publication</h1>
-            <div class="grid grid-cols-4 gap-x-4 gap-y-10 mb-10">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-10 mb-10">
                 @foreach ($news as $item)
                 <a href="{{route('page.news', $item->id)}}">
                     <div

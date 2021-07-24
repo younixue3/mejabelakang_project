@@ -22,8 +22,8 @@
         {{-- <template> --}}
     <div class="flex w-full h-full">
         <div id="mobile-menu" class="h-full md:h-auto z-50 w-0 fixed md:w-80 duration-300 hover:w-80 bg-white rounded shadow-md md:block md:static overflow-hidden md:overflow-none">
-            <div class="font-bold text-xl h-16 pl-5 pr-2 md:pr-0 overflow-hidden truncate flex">
-                <img class="h-10 w-10 m-auto" src="{{ asset('img/logo.png') }}" alt="">
+            <div class="font-bold text-xl h-16 pl-4 pr-2 md:pr-0 overflow-hidden truncate flex">
+                <img class="h-4 m-auto" src="{{ asset('img/logo_black.png') }}" alt="">
                 <span class="ml-4 m-auto">
                     Meja Belakang
                 </span>
